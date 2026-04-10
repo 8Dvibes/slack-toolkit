@@ -1,0 +1,7101 @@
+[
+  {
+    "name": "admin.analytics.getFile",
+    "description": "Export workspace or member analytics data",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "special",
+    "rate_note": "",
+    "required_params": [
+      "type"
+    ],
+    "optional_params": [
+      "date",
+      "metadata_only"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.analytics.getFile"
+  },
+  {
+    "name": "admin.apps.activities.list",
+    "description": "List app activity logs",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.activities.list"
+  },
+  {
+    "name": "admin.apps.approve",
+    "description": "Approve an app for installation",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "app_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.approve"
+  },
+  {
+    "name": "admin.apps.approved.list",
+    "description": "List approved apps",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "approved_apps",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.approved.list"
+  },
+  {
+    "name": "admin.apps.clearResolution",
+    "description": "Clear app resolution",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "app_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.clearResolution"
+  },
+  {
+    "name": "admin.apps.config.lookup",
+    "description": "Lookup app config",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "app_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.config.lookup"
+  },
+  {
+    "name": "admin.apps.config.set",
+    "description": "Set app config",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "app_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.config.set"
+  },
+  {
+    "name": "admin.apps.requests.cancel",
+    "description": "Cancel app request",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "request_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.requests.cancel"
+  },
+  {
+    "name": "admin.apps.requests.list",
+    "description": "List pending app install requests",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "app_requests",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.requests.list"
+  },
+  {
+    "name": "admin.apps.restrict",
+    "description": "Restrict an app from being installed",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "app_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.restrict"
+  },
+  {
+    "name": "admin.apps.restricted.list",
+    "description": "List restricted apps",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "restricted_apps",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.restricted.list"
+  },
+  {
+    "name": "admin.apps.uninstall",
+    "description": "Uninstall an app from workspace(s) or org",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "app_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.apps.uninstall"
+  },
+  {
+    "name": "admin.auth.policy.assignEntities",
+    "description": "Assign entities to an auth policy",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "entity_ids",
+      "entity_type",
+      "policy_name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.auth.policy.assignEntities"
+  },
+  {
+    "name": "admin.auth.policy.getEntities",
+    "description": "Get entities assigned to an auth policy",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "policy_name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.auth.policy.getEntities"
+  },
+  {
+    "name": "admin.auth.policy.removeEntities",
+    "description": "Remove entities from an auth policy",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "entity_ids",
+      "entity_type",
+      "policy_name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.auth.policy.removeEntities"
+  },
+  {
+    "name": "admin.barriers.create",
+    "description": "Create an information barrier",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "barriered_from_usergroup_ids",
+      "primary_usergroup_id",
+      "restricted_subjects"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.barriers.create"
+  },
+  {
+    "name": "admin.barriers.delete",
+    "description": "Delete an information barrier",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "barrier_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.barriers.delete"
+  },
+  {
+    "name": "admin.barriers.list",
+    "description": "List information barriers",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "barriers",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.barriers.list"
+  },
+  {
+    "name": "admin.barriers.update",
+    "description": "Update an information barrier",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "barrier_id",
+      "barriered_from_usergroup_ids",
+      "primary_usergroup_id",
+      "restricted_subjects"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.barriers.update"
+  },
+  {
+    "name": "admin.conversations.archive",
+    "description": "Archive a channel (admin)",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.archive"
+  },
+  {
+    "name": "admin.conversations.bulkArchive",
+    "description": "Bulk archive channels",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.bulkArchive"
+  },
+  {
+    "name": "admin.conversations.bulkDelete",
+    "description": "Bulk delete channels",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.bulkDelete"
+  },
+  {
+    "name": "admin.conversations.bulkMove",
+    "description": "Bulk move channels between workspaces",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_ids",
+      "target_team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.bulkMove"
+  },
+  {
+    "name": "admin.conversations.convertToPrivate",
+    "description": "Convert a public channel to private",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.convertToPrivate"
+  },
+  {
+    "name": "admin.conversations.convertToPublic",
+    "description": "Convert a private channel to public",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.convertToPublic"
+  },
+  {
+    "name": "admin.conversations.create",
+    "description": "Create a channel (org-level)",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "is_private",
+      "name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.create"
+  },
+  {
+    "name": "admin.conversations.delete",
+    "description": "Delete a channel",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.delete"
+  },
+  {
+    "name": "admin.conversations.disconnectShared",
+    "description": "Disconnect a shared channel",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.disconnectShared"
+  },
+  {
+    "name": "admin.conversations.ekm.listOriginalConnectedChannelInfo",
+    "description": "List EKM connected channel info",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.ekm.listOriginalConnectedChannelInfo"
+  },
+  {
+    "name": "admin.conversations.getConversationPrefs",
+    "description": "Get channel preferences",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.getConversationPrefs"
+  },
+  {
+    "name": "admin.conversations.getCustomRetention",
+    "description": "Get custom retention policy for a channel",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.getCustomRetention"
+  },
+  {
+    "name": "admin.conversations.getTeams",
+    "description": "Get workspaces a channel is in",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.getTeams"
+  },
+  {
+    "name": "admin.conversations.invite",
+    "description": "Invite users to a channel (admin)",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "user_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.invite"
+  },
+  {
+    "name": "admin.conversations.lookup",
+    "description": "Lookup a channel by name",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "last_message_activity_before",
+      "team_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.lookup"
+  },
+  {
+    "name": "admin.conversations.removeCustomRetention",
+    "description": "Remove custom retention policy",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.removeCustomRetention"
+  },
+  {
+    "name": "admin.conversations.rename",
+    "description": "Rename a channel (admin)",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.rename"
+  },
+  {
+    "name": "admin.conversations.restrictAccess.addGroup",
+    "description": "Add IDP group restriction to channel",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "group_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.restrictAccess.addGroup"
+  },
+  {
+    "name": "admin.conversations.restrictAccess.listGroups",
+    "description": "List IDP group restrictions for channel",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.restrictAccess.listGroups"
+  },
+  {
+    "name": "admin.conversations.restrictAccess.removeGroup",
+    "description": "Remove IDP group restriction from channel",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "group_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.restrictAccess.removeGroup"
+  },
+  {
+    "name": "admin.conversations.search",
+    "description": "Search channels (admin)",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "conversations",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.search"
+  },
+  {
+    "name": "admin.conversations.setConversationPrefs",
+    "description": "Set channel preferences",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "prefs"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.setConversationPrefs"
+  },
+  {
+    "name": "admin.conversations.setCustomRetention",
+    "description": "Set custom retention policy",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "duration_days"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.setCustomRetention"
+  },
+  {
+    "name": "admin.conversations.setTeams",
+    "description": "Set workspaces for a channel",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.setTeams"
+  },
+  {
+    "name": "admin.conversations.unarchive",
+    "description": "Unarchive a channel (admin)",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.conversations.unarchive"
+  },
+  {
+    "name": "admin.emoji.add",
+    "description": "Add a custom emoji",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "name",
+      "url"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.emoji.add"
+  },
+  {
+    "name": "admin.emoji.addAlias",
+    "description": "Add an emoji alias",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "alias_for",
+      "name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.emoji.addAlias"
+  },
+  {
+    "name": "admin.emoji.list",
+    "description": "List custom emoji",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "emoji",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.emoji.list"
+  },
+  {
+    "name": "admin.emoji.remove",
+    "description": "Remove a custom emoji",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.emoji.remove"
+  },
+  {
+    "name": "admin.emoji.rename",
+    "description": "Rename a custom emoji",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "name",
+      "new_name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.emoji.rename"
+  },
+  {
+    "name": "admin.functions.list",
+    "description": "List installed custom functions",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "functions",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.functions.list"
+  },
+  {
+    "name": "admin.functions.permissions.lookup",
+    "description": "Lookup function permissions",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "function_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.functions.permissions.lookup"
+  },
+  {
+    "name": "admin.functions.permissions.set",
+    "description": "Set function permissions",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "function_id",
+      "visibility"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.functions.permissions.set"
+  },
+  {
+    "name": "admin.inviteRequests.approve",
+    "description": "Approve a workspace invite request",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "invite_request_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.inviteRequests.approve"
+  },
+  {
+    "name": "admin.inviteRequests.approved.list",
+    "description": "List approved workspace invite requests",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.inviteRequests.approved.list"
+  },
+  {
+    "name": "admin.inviteRequests.denied.list",
+    "description": "List denied workspace invite requests",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.inviteRequests.denied.list"
+  },
+  {
+    "name": "admin.inviteRequests.deny",
+    "description": "Deny a workspace invite request",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "invite_request_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.inviteRequests.deny"
+  },
+  {
+    "name": "admin.inviteRequests.list",
+    "description": "List pending workspace invite requests",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.inviteRequests.list"
+  },
+  {
+    "name": "admin.roles.addAssignments",
+    "description": "Add role assignments",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "entity_ids",
+      "role_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.roles.addAssignments"
+  },
+  {
+    "name": "admin.roles.listAssignments",
+    "description": "List role assignments",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.roles.listAssignments"
+  },
+  {
+    "name": "admin.roles.removeAssignments",
+    "description": "Remove role assignments",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "entity_ids",
+      "role_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.roles.removeAssignments"
+  },
+  {
+    "name": "admin.teams.admins.list",
+    "description": "List admins for a workspace",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.admins.list"
+  },
+  {
+    "name": "admin.teams.create",
+    "description": "Create a new workspace in an Enterprise org",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier1",
+    "rate_note": "",
+    "required_params": [
+      "team_domain",
+      "team_name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.create"
+  },
+  {
+    "name": "admin.teams.list",
+    "description": "List workspaces in an Enterprise org",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "teams",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.list"
+  },
+  {
+    "name": "admin.teams.owners.list",
+    "description": "List owners for a workspace",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.owners.list"
+  },
+  {
+    "name": "admin.teams.settings.info",
+    "description": "Get workspace settings",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.settings.info"
+  },
+  {
+    "name": "admin.teams.settings.setDefaultChannels",
+    "description": "Set default channels for a workspace",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_ids",
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.settings.setDefaultChannels"
+  },
+  {
+    "name": "admin.teams.settings.setDescription",
+    "description": "Set workspace description",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "description",
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.settings.setDescription"
+  },
+  {
+    "name": "admin.teams.settings.setDiscoverability",
+    "description": "Set workspace discoverability",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "discoverability",
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.settings.setDiscoverability"
+  },
+  {
+    "name": "admin.teams.settings.setIcon",
+    "description": "Set workspace icon",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "image_url",
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.settings.setIcon"
+  },
+  {
+    "name": "admin.teams.settings.setName",
+    "description": "Set workspace name",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "name",
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.teams.settings.setName"
+  },
+  {
+    "name": "admin.usergroups.addChannels",
+    "description": "Add channels to an IDP group",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_ids",
+      "usergroup_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.usergroups.addChannels"
+  },
+  {
+    "name": "admin.usergroups.addTeams",
+    "description": "Add workspaces to an IDP group",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "team_ids",
+      "usergroup_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.usergroups.addTeams"
+  },
+  {
+    "name": "admin.usergroups.listChannels",
+    "description": "List channels linked to an IDP group",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "usergroup_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.usergroups.listChannels"
+  },
+  {
+    "name": "admin.usergroups.removeChannels",
+    "description": "Remove channels from an IDP group",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_ids",
+      "usergroup_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.usergroups.removeChannels"
+  },
+  {
+    "name": "admin.users.assign",
+    "description": "Add a user to a workspace",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "team_id",
+      "user_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.assign"
+  },
+  {
+    "name": "admin.users.invite",
+    "description": "Invite a user to a workspace",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_ids",
+      "email",
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.invite"
+  },
+  {
+    "name": "admin.users.list",
+    "description": "List users in a workspace",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "users",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.list"
+  },
+  {
+    "name": "admin.users.remove",
+    "description": "Remove a user from a workspace",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "team_id",
+      "user_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.remove"
+  },
+  {
+    "name": "admin.users.session.clearSettings",
+    "description": "Clear user session settings",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "user_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.session.clearSettings"
+  },
+  {
+    "name": "admin.users.session.getSettings",
+    "description": "Get user session settings",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "user_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.session.getSettings"
+  },
+  {
+    "name": "admin.users.session.invalidate",
+    "description": "Invalidate a user session",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "session_id",
+      "team_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.session.invalidate"
+  },
+  {
+    "name": "admin.users.session.list",
+    "description": "List active user sessions",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "active_sessions",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.session.list"
+  },
+  {
+    "name": "admin.users.session.reset",
+    "description": "Reset a user session",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "user_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.session.reset"
+  },
+  {
+    "name": "admin.users.session.resetBulk",
+    "description": "Bulk reset user sessions",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "user_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.session.resetBulk"
+  },
+  {
+    "name": "admin.users.session.setSettings",
+    "description": "Set user session settings",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "user_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.session.setSettings"
+  },
+  {
+    "name": "admin.users.setAdmin",
+    "description": "Set a user as workspace admin",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier1",
+    "rate_note": "",
+    "required_params": [
+      "team_id",
+      "user_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.setAdmin"
+  },
+  {
+    "name": "admin.users.setExpiration",
+    "description": "Set account expiration date",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "expiration_ts",
+      "user_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.setExpiration"
+  },
+  {
+    "name": "admin.users.setOwner",
+    "description": "Set a user as workspace owner",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier1",
+    "rate_note": "",
+    "required_params": [
+      "team_id",
+      "user_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.setOwner"
+  },
+  {
+    "name": "admin.users.setRegular",
+    "description": "Set a user as regular member",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier1",
+    "rate_note": "",
+    "required_params": [
+      "team_id",
+      "user_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.users.setRegular"
+  },
+  {
+    "name": "admin.workflows.collaborators.add",
+    "description": "Add workflow collaborators",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "collaborator_ids",
+      "workflow_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.workflows.collaborators.add"
+  },
+  {
+    "name": "admin.workflows.collaborators.remove",
+    "description": "Remove workflow collaborators",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "collaborator_ids",
+      "workflow_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.workflows.collaborators.remove"
+  },
+  {
+    "name": "admin.workflows.permissions.lookup",
+    "description": "Lookup workflow permissions",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "workflow_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.workflows.permissions.lookup"
+  },
+  {
+    "name": "admin.workflows.search",
+    "description": "Search workflows (admin)",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "workflows",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.workflows.search"
+  },
+  {
+    "name": "admin.workflows.unpublish",
+    "description": "Unpublish a workflow",
+    "namespace": "admin",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "workflow_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/admin.workflows.unpublish"
+  },
+  {
+    "name": "api.test",
+    "description": "Test API connectivity (no auth required)",
+    "namespace": "api",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier4",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "foo",
+      "error"
+    ],
+    "param_descriptions": {
+      "foo": "Example parameter -- echoed back in response",
+      "error": "Error type to simulate (e.g. 'my_error')"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/api.test"
+  },
+  {
+    "name": "apps.connections.open",
+    "description": "Generate a WebSocket URL for Socket Mode",
+    "namespace": "apps",
+    "required_scopes": {
+      "app": [
+        "connections:write"
+      ]
+    },
+    "token_types": [
+      "app"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/apps.connections.open"
+  },
+  {
+    "name": "apps.event.authorizations.list",
+    "description": "List event authorizations for an app",
+    "namespace": "apps",
+    "required_scopes": {
+      "bot": [
+        "authorizations:read"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "event_context"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/apps.event.authorizations.list"
+  },
+  {
+    "name": "apps.manifest.create",
+    "description": "Create an app from a manifest",
+    "namespace": "apps",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "manifest"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/apps.manifest.create"
+  },
+  {
+    "name": "apps.manifest.delete",
+    "description": "Delete an app created from a manifest",
+    "namespace": "apps",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "app_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/apps.manifest.delete"
+  },
+  {
+    "name": "apps.manifest.export",
+    "description": "Export an app manifest",
+    "namespace": "apps",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "app_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/apps.manifest.export"
+  },
+  {
+    "name": "apps.manifest.update",
+    "description": "Update an app manifest",
+    "namespace": "apps",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "app_id",
+      "manifest"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/apps.manifest.update"
+  },
+  {
+    "name": "apps.manifest.validate",
+    "description": "Validate an app manifest",
+    "namespace": "apps",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "manifest"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/apps.manifest.validate"
+  },
+  {
+    "name": "apps.uninstall",
+    "description": "Uninstall the app from a workspace",
+    "namespace": "apps",
+    "required_scopes": {},
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "client_id",
+      "client_secret"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/apps.uninstall"
+  },
+  {
+    "name": "assistant.threads.setStatus",
+    "description": "Set assistant thread status indicator",
+    "namespace": "assistant",
+    "required_scopes": {
+      "bot": [
+        "assistant:write"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "thread_ts",
+      "status"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel_id": "Channel containing the thread",
+      "thread_ts": "Thread timestamp",
+      "status": "Status text shown to users"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/assistant.threads.setStatus"
+  },
+  {
+    "name": "assistant.threads.setSuggestedPrompts",
+    "description": "Set suggested prompts for assistant thread",
+    "namespace": "assistant",
+    "required_scopes": {
+      "bot": [
+        "assistant:write"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "thread_ts",
+      "prompts"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel_id": "Channel containing the thread",
+      "thread_ts": "Thread timestamp",
+      "prompts": "Array of suggested prompt objects"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/assistant.threads.setSuggestedPrompts"
+  },
+  {
+    "name": "assistant.threads.setTitle",
+    "description": "Set assistant thread title",
+    "namespace": "assistant",
+    "required_scopes": {
+      "bot": [
+        "assistant:write"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "thread_ts",
+      "title"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel_id": "Channel containing the thread",
+      "thread_ts": "Thread timestamp",
+      "title": "Thread title text"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/assistant.threads.setTitle"
+  },
+  {
+    "name": "auth.revoke",
+    "description": "Revoke a token",
+    "namespace": "auth",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "test"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/auth.revoke"
+  },
+  {
+    "name": "auth.teams.list",
+    "description": "List workspaces the token has access to",
+    "namespace": "auth",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "teams",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/auth.teams.list"
+  },
+  {
+    "name": "auth.test",
+    "description": "Test authentication and get identity info",
+    "namespace": "auth",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/auth.test"
+  },
+  {
+    "name": "bookmarks.add",
+    "description": "Add a bookmark to a channel",
+    "namespace": "bookmarks",
+    "required_scopes": {
+      "bot": [
+        "bookmarks:write"
+      ],
+      "user": [
+        "bookmarks:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id",
+      "title",
+      "type"
+    ],
+    "optional_params": [
+      "emoji",
+      "entity_id",
+      "link",
+      "parent_id"
+    ],
+    "param_descriptions": {
+      "channel_id": "Channel to add the bookmark to",
+      "title": "Title for the bookmark",
+      "type": "Type of bookmark (link)",
+      "link": "URL for the bookmark"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/bookmarks.add"
+  },
+  {
+    "name": "bookmarks.edit",
+    "description": "Edit a bookmark",
+    "namespace": "bookmarks",
+    "required_scopes": {
+      "bot": [
+        "bookmarks:write"
+      ],
+      "user": [
+        "bookmarks:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "bookmark_id",
+      "channel_id"
+    ],
+    "optional_params": [
+      "emoji",
+      "link",
+      "title"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/bookmarks.edit"
+  },
+  {
+    "name": "bookmarks.list",
+    "description": "List bookmarks for a channel",
+    "namespace": "bookmarks",
+    "required_scopes": {
+      "bot": [
+        "bookmarks:read"
+      ],
+      "user": [
+        "bookmarks:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/bookmarks.list"
+  },
+  {
+    "name": "bookmarks.remove",
+    "description": "Remove a bookmark from a channel",
+    "namespace": "bookmarks",
+    "required_scopes": {
+      "bot": [
+        "bookmarks:write"
+      ],
+      "user": [
+        "bookmarks:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "bookmark_id",
+      "channel_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/bookmarks.remove"
+  },
+  {
+    "name": "bots.info",
+    "description": "Get info about a bot user",
+    "namespace": "bots",
+    "required_scopes": {
+      "bot": [
+        "users:read"
+      ],
+      "user": [
+        "users:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "bot"
+    ],
+    "param_descriptions": {
+      "bot": "Bot user ID to get info for"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/bots.info"
+  },
+  {
+    "name": "calls.add",
+    "description": "Register a new call",
+    "namespace": "calls",
+    "required_scopes": {
+      "bot": [
+        "calls:write"
+      ],
+      "user": [
+        "calls:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "external_unique_id",
+      "join_url"
+    ],
+    "optional_params": [
+      "created_by",
+      "date_start",
+      "desktop_app_join_url",
+      "external_display_id",
+      "title",
+      "users"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/calls.add"
+  },
+  {
+    "name": "calls.end",
+    "description": "End a call",
+    "namespace": "calls",
+    "required_scopes": {
+      "bot": [
+        "calls:write"
+      ],
+      "user": [
+        "calls:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "id"
+    ],
+    "optional_params": [
+      "duration"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/calls.end"
+  },
+  {
+    "name": "calls.info",
+    "description": "Get info about a call",
+    "namespace": "calls",
+    "required_scopes": {
+      "bot": [
+        "calls:read"
+      ],
+      "user": [
+        "calls:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/calls.info"
+  },
+  {
+    "name": "calls.participants.add",
+    "description": "Add participants to a call",
+    "namespace": "calls",
+    "required_scopes": {
+      "bot": [
+        "calls:write"
+      ],
+      "user": [
+        "calls:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "id",
+      "users"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/calls.participants.add"
+  },
+  {
+    "name": "calls.participants.remove",
+    "description": "Remove participants from a call",
+    "namespace": "calls",
+    "required_scopes": {
+      "bot": [
+        "calls:write"
+      ],
+      "user": [
+        "calls:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "id",
+      "users"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/calls.participants.remove"
+  },
+  {
+    "name": "calls.update",
+    "description": "Update info about a call",
+    "namespace": "calls",
+    "required_scopes": {
+      "bot": [
+        "calls:write"
+      ],
+      "user": [
+        "calls:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "id"
+    ],
+    "optional_params": [
+      "desktop_app_join_url",
+      "join_url",
+      "title"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/calls.update"
+  },
+  {
+    "name": "canvases.access.delete",
+    "description": "Remove access to a canvas",
+    "namespace": "canvases",
+    "required_scopes": {
+      "bot": [
+        "canvases:write"
+      ],
+      "user": [
+        "canvases:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "canvas_id"
+    ],
+    "optional_params": [
+      "channel_ids",
+      "user_ids"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/canvases.access.delete"
+  },
+  {
+    "name": "canvases.access.set",
+    "description": "Set access to a canvas",
+    "namespace": "canvases",
+    "required_scopes": {
+      "bot": [
+        "canvases:write"
+      ],
+      "user": [
+        "canvases:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "canvas_id",
+      "access_level"
+    ],
+    "optional_params": [
+      "channel_ids",
+      "user_ids"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/canvases.access.set"
+  },
+  {
+    "name": "canvases.create",
+    "description": "Create a new canvas",
+    "namespace": "canvases",
+    "required_scopes": {
+      "bot": [
+        "canvases:write"
+      ],
+      "user": [
+        "canvases:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "document_content",
+      "title"
+    ],
+    "param_descriptions": {
+      "document_content": "Canvas content in document_content format",
+      "title": "Title for the canvas"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/canvases.create"
+  },
+  {
+    "name": "canvases.delete",
+    "description": "Delete a canvas",
+    "namespace": "canvases",
+    "required_scopes": {
+      "bot": [
+        "canvases:write"
+      ],
+      "user": [
+        "canvases:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "canvas_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/canvases.delete"
+  },
+  {
+    "name": "canvases.edit",
+    "description": "Edit canvas content",
+    "namespace": "canvases",
+    "required_scopes": {
+      "bot": [
+        "canvases:write"
+      ],
+      "user": [
+        "canvases:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "canvas_id",
+      "changes"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/canvases.edit"
+  },
+  {
+    "name": "canvases.sections.lookup",
+    "description": "Lookup canvas sections",
+    "namespace": "canvases",
+    "required_scopes": {
+      "bot": [
+        "canvases:read"
+      ],
+      "user": [
+        "canvases:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "canvas_id",
+      "criteria"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/canvases.sections.lookup"
+  },
+  {
+    "name": "chat.appendStream",
+    "description": "Append content to an active stream",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "special",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "stream_id"
+    ],
+    "optional_params": [
+      "text",
+      "blocks"
+    ],
+    "param_descriptions": {
+      "channel": "Channel of the active stream",
+      "stream_id": "ID of the stream to append to",
+      "text": "Text to append",
+      "blocks": "Blocks to append"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.appendStream"
+  },
+  {
+    "name": "chat.delete",
+    "description": "Delete a message",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ],
+      "user": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "ts"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel containing the message",
+      "ts": "Timestamp of the message to delete"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.delete"
+  },
+  {
+    "name": "chat.deleteScheduledMessage",
+    "description": "Delete a scheduled message",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ],
+      "user": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "scheduled_message_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel of the scheduled message",
+      "scheduled_message_id": "ID of the scheduled message to delete"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.deleteScheduledMessage"
+  },
+  {
+    "name": "chat.getPermalink",
+    "description": "Get a permalink URL for a message",
+    "namespace": "chat",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "message_ts"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel containing the message",
+      "message_ts": "Timestamp of the message"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.getPermalink"
+  },
+  {
+    "name": "chat.meMessage",
+    "description": "Post a /me message",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ],
+      "user": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "text"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.meMessage"
+  },
+  {
+    "name": "chat.postEphemeral",
+    "description": "Send an ephemeral message visible only to one user",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ],
+      "user": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier4",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "user"
+    ],
+    "optional_params": [
+      "text",
+      "blocks",
+      "thread_ts",
+      "attachments",
+      "parse",
+      "link_names"
+    ],
+    "param_descriptions": {
+      "channel": "Channel to post the ephemeral message in",
+      "user": "User ID who will see the ephemeral message",
+      "text": "Text of the ephemeral message",
+      "blocks": "JSON array of Block Kit blocks",
+      "thread_ts": "Thread timestamp for ephemeral in thread"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.postEphemeral"
+  },
+  {
+    "name": "chat.postMessage",
+    "description": "Send a message to a channel",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ],
+      "user": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "special",
+    "rate_note": "1 message per second per channel",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [
+      "text",
+      "blocks",
+      "thread_ts",
+      "reply_broadcast",
+      "unfurl_links",
+      "unfurl_media",
+      "mrkdwn",
+      "metadata",
+      "parse",
+      "link_names",
+      "attachments",
+      "icon_emoji",
+      "icon_url",
+      "username"
+    ],
+    "param_descriptions": {
+      "channel": "Channel, private group, or IM channel to send message to (ID)",
+      "text": "Text of the message (used as fallback for Block Kit)",
+      "blocks": "JSON array of Block Kit blocks",
+      "thread_ts": "Thread timestamp to reply in a thread",
+      "reply_broadcast": "Post thread reply to channel too (boolean)",
+      "unfurl_links": "Enable URL unfurling in the message",
+      "unfurl_media": "Enable media unfurling in the message",
+      "mrkdwn": "Enable Slack mrkdwn formatting (default true)",
+      "metadata": "JSON metadata attached to the message",
+      "parse": "Change how messages are treated (none, full)",
+      "link_names": "Find and link channel names and usernames",
+      "attachments": "JSON array of legacy attachment objects",
+      "icon_emoji": "Emoji to use as the icon for this message (bot only)",
+      "icon_url": "URL to image to use as icon for this message (bot only)",
+      "username": "Bot username override (requires chat:write.customize)"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.postMessage"
+  },
+  {
+    "name": "chat.scheduleMessage",
+    "description": "Schedule a message for later",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ],
+      "user": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "post_at"
+    ],
+    "optional_params": [
+      "text",
+      "blocks",
+      "thread_ts",
+      "reply_broadcast",
+      "unfurl_links",
+      "unfurl_media",
+      "metadata",
+      "parse",
+      "link_names",
+      "attachments"
+    ],
+    "param_descriptions": {
+      "channel": "Channel to post the scheduled message to",
+      "post_at": "Unix timestamp for when to send the message",
+      "text": "Text of the scheduled message",
+      "blocks": "JSON array of Block Kit blocks"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.scheduleMessage"
+  },
+  {
+    "name": "chat.scheduledMessages.list",
+    "description": "List scheduled messages",
+    "namespace": "chat",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "channel",
+      "latest",
+      "oldest",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "channel": "Filter by channel",
+      "latest": "Latest timestamp to include",
+      "oldest": "Oldest timestamp to include"
+    },
+    "response_key": "scheduled_messages",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.scheduledMessages.list"
+  },
+  {
+    "name": "chat.startStream",
+    "description": "Start a streaming response in a channel",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "special",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [
+      "thread_ts"
+    ],
+    "param_descriptions": {
+      "channel": "Channel to start streaming in",
+      "thread_ts": "Thread timestamp to stream in"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.startStream"
+  },
+  {
+    "name": "chat.stopStream",
+    "description": "Stop a streaming response",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "special",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "stream_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel of the active stream",
+      "stream_id": "ID of the stream to stop"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.stopStream"
+  },
+  {
+    "name": "chat.unfurl",
+    "description": "Provide rich preview content for URLs in a message",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "links:write"
+      ],
+      "user": [
+        "links:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "ts",
+      "unfurls"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel of the message with URLs",
+      "ts": "Timestamp of the message",
+      "unfurls": "Map of URL to unfurl content"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.unfurl"
+  },
+  {
+    "name": "chat.update",
+    "description": "Update an existing message",
+    "namespace": "chat",
+    "required_scopes": {
+      "bot": [
+        "chat:write"
+      ],
+      "user": [
+        "chat:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "ts"
+    ],
+    "optional_params": [
+      "text",
+      "blocks",
+      "attachments",
+      "parse",
+      "link_names",
+      "metadata",
+      "reply_broadcast",
+      "file_ids"
+    ],
+    "param_descriptions": {
+      "channel": "Channel containing the message",
+      "ts": "Timestamp of the message to update",
+      "text": "New text for the message",
+      "blocks": "New Block Kit blocks for the message"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/chat.update"
+  },
+  {
+    "name": "conversations.acceptSharedInvite",
+    "description": "Accept a Slack Connect channel invite",
+    "namespace": "conversations",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_name"
+    ],
+    "optional_params": [
+      "channel_id",
+      "free_trial_accepted",
+      "invite_id",
+      "is_private",
+      "team_id"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.acceptSharedInvite"
+  },
+  {
+    "name": "conversations.approveSharedInvite",
+    "description": "Approve a Slack Connect channel invite",
+    "namespace": "conversations",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "invite_id"
+    ],
+    "optional_params": [
+      "target_team"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.approveSharedInvite"
+  },
+  {
+    "name": "conversations.archive",
+    "description": "Archive a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage",
+        "groups:write"
+      ],
+      "user": [
+        "channels:manage",
+        "groups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID to archive"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.archive"
+  },
+  {
+    "name": "conversations.canvases.create",
+    "description": "Create a canvas in a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "canvases:write"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel_id"
+    ],
+    "optional_params": [
+      "document_content",
+      "markdown"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.canvases.create"
+  },
+  {
+    "name": "conversations.close",
+    "description": "Close a direct message or group DM",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "im:write",
+        "mpim:write"
+      ],
+      "user": [
+        "im:write",
+        "mpim:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID of DM to close"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.close"
+  },
+  {
+    "name": "conversations.create",
+    "description": "Create a new channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage",
+        "groups:write"
+      ],
+      "user": [
+        "channels:manage",
+        "groups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "name"
+    ],
+    "optional_params": [
+      "is_private",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "name": "Name of the channel to create",
+      "is_private": "Create as private channel (default false)",
+      "team_id": "Workspace ID (Enterprise Grid)"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.create"
+  },
+  {
+    "name": "conversations.declineSharedInvite",
+    "description": "Decline a Slack Connect channel invite",
+    "namespace": "conversations",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "invite_id"
+    ],
+    "optional_params": [
+      "target_team"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.declineSharedInvite"
+  },
+  {
+    "name": "conversations.externalInvitePermissions.set",
+    "description": "Set external invite permissions for a channel",
+    "namespace": "conversations",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "action",
+      "channel",
+      "external_workspace_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.externalInvitePermissions.set"
+  },
+  {
+    "name": "conversations.history",
+    "description": "Get message history for a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:history",
+        "groups:history",
+        "im:history",
+        "mpim:history"
+      ],
+      "user": [
+        "channels:history",
+        "groups:history",
+        "im:history",
+        "mpim:history"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [
+      "inclusive",
+      "latest",
+      "limit",
+      "oldest"
+    ],
+    "param_descriptions": {
+      "channel": "Channel ID to fetch history for",
+      "inclusive": "Include messages with oldest/latest timestamps",
+      "latest": "End of time range (Unix ts, default now)",
+      "limit": "Maximum messages per page (default 100, max 1000)",
+      "oldest": "Start of time range (Unix ts, default 0)"
+    },
+    "response_key": "messages",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.history"
+  },
+  {
+    "name": "conversations.info",
+    "description": "Get info about a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:read",
+        "groups:read",
+        "mpim:read",
+        "im:read"
+      ],
+      "user": [
+        "channels:read",
+        "groups:read",
+        "mpim:read",
+        "im:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [
+      "include_locale",
+      "include_num_members"
+    ],
+    "param_descriptions": {
+      "channel": "Channel ID to get info for",
+      "include_locale": "Include locale data in response",
+      "include_num_members": "Include member count"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.info"
+  },
+  {
+    "name": "conversations.invite",
+    "description": "Invite users to a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage",
+        "groups:write"
+      ],
+      "user": [
+        "channels:manage",
+        "groups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "users"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID to invite to",
+      "users": "Comma-separated list of user IDs to invite"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.invite"
+  },
+  {
+    "name": "conversations.inviteShared",
+    "description": "Send a Slack Connect channel invite",
+    "namespace": "conversations",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [
+      "emails",
+      "external_limited",
+      "user_ids"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.inviteShared"
+  },
+  {
+    "name": "conversations.join",
+    "description": "Join an existing channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:join"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID to join"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.join"
+  },
+  {
+    "name": "conversations.kick",
+    "description": "Remove a user from a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage",
+        "groups:write"
+      ],
+      "user": [
+        "channels:manage",
+        "groups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "user"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID",
+      "user": "User ID to remove"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.kick"
+  },
+  {
+    "name": "conversations.leave",
+    "description": "Leave a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage"
+      ],
+      "user": [
+        "channels:manage"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID to leave"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.leave"
+  },
+  {
+    "name": "conversations.list",
+    "description": "List all channels in a workspace",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:read",
+        "groups:read",
+        "mpim:read",
+        "im:read"
+      ],
+      "user": [
+        "channels:read",
+        "groups:read",
+        "mpim:read",
+        "im:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "exclude_archived",
+      "limit",
+      "team_id",
+      "types"
+    ],
+    "param_descriptions": {
+      "exclude_archived": "Exclude archived channels (default false)",
+      "limit": "Maximum results per page (default 100, max 1000)",
+      "team_id": "Filter by workspace (Enterprise Grid)",
+      "types": "Comma-separated channel types: public_channel, private_channel, mpim, im"
+    },
+    "response_key": "channels",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.list"
+  },
+  {
+    "name": "conversations.listConnectInvites",
+    "description": "List Slack Connect channel invites",
+    "namespace": "conversations",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "count",
+      "team_id"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.listConnectInvites"
+  },
+  {
+    "name": "conversations.mark",
+    "description": "Set the read cursor position in a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage",
+        "groups:write",
+        "im:write",
+        "mpim:write"
+      ],
+      "user": [
+        "channels:manage",
+        "groups:write",
+        "im:write",
+        "mpim:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "ts"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID",
+      "ts": "Timestamp of message to mark as read"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.mark"
+  },
+  {
+    "name": "conversations.members",
+    "description": "List members of a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:read",
+        "groups:read",
+        "mpim:read",
+        "im:read"
+      ],
+      "user": [
+        "channels:read",
+        "groups:read",
+        "mpim:read",
+        "im:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [
+      "limit"
+    ],
+    "param_descriptions": {
+      "channel": "Channel ID",
+      "limit": "Maximum members per page (default 100, max 1000)"
+    },
+    "response_key": "members",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.members"
+  },
+  {
+    "name": "conversations.open",
+    "description": "Open or resume a direct message or group DM",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "im:write",
+        "mpim:write"
+      ],
+      "user": [
+        "im:write",
+        "mpim:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "channel",
+      "return_im",
+      "users"
+    ],
+    "param_descriptions": {
+      "channel": "Resume a DM by channel ID",
+      "return_im": "Boolean to return full IM object",
+      "users": "Comma-separated list of user IDs to open DM with"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.open"
+  },
+  {
+    "name": "conversations.rename",
+    "description": "Rename a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage",
+        "groups:write"
+      ],
+      "user": [
+        "channels:manage",
+        "groups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "name"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID to rename",
+      "name": "New name for the channel"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.rename"
+  },
+  {
+    "name": "conversations.replies",
+    "description": "Get replies in a thread",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:history",
+        "groups:history",
+        "im:history",
+        "mpim:history"
+      ],
+      "user": [
+        "channels:history",
+        "groups:history",
+        "im:history",
+        "mpim:history"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "ts"
+    ],
+    "optional_params": [
+      "inclusive",
+      "latest",
+      "limit",
+      "oldest"
+    ],
+    "param_descriptions": {
+      "channel": "Channel containing the thread",
+      "ts": "Thread parent message timestamp",
+      "inclusive": "Include messages with oldest/latest timestamps",
+      "latest": "End of time range",
+      "limit": "Maximum replies per page (default 1000)",
+      "oldest": "Start of time range"
+    },
+    "response_key": "messages",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.replies"
+  },
+  {
+    "name": "conversations.requestSharedInvite.approve",
+    "description": "Approve a shared invite request",
+    "namespace": "conversations",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "invite_id"
+    ],
+    "optional_params": [
+      "channel_id",
+      "is_external_limited",
+      "message"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.requestSharedInvite.approve"
+  },
+  {
+    "name": "conversations.requestSharedInvite.deny",
+    "description": "Deny a shared invite request",
+    "namespace": "conversations",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "invite_id"
+    ],
+    "optional_params": [
+      "message"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.requestSharedInvite.deny"
+  },
+  {
+    "name": "conversations.requestSharedInvite.list",
+    "description": "List shared invite requests",
+    "namespace": "conversations",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "invite_ids",
+      "is_approved"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.requestSharedInvite.list"
+  },
+  {
+    "name": "conversations.setPurpose",
+    "description": "Set the purpose of a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage",
+        "groups:write"
+      ],
+      "user": [
+        "channels:manage",
+        "groups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "purpose"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID",
+      "purpose": "New purpose text"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.setPurpose"
+  },
+  {
+    "name": "conversations.setTopic",
+    "description": "Set the topic of a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage",
+        "groups:write"
+      ],
+      "user": [
+        "channels:manage",
+        "groups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "topic"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID",
+      "topic": "New topic text"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.setTopic"
+  },
+  {
+    "name": "conversations.unarchive",
+    "description": "Unarchive a channel",
+    "namespace": "conversations",
+    "required_scopes": {
+      "bot": [
+        "channels:manage",
+        "groups:write"
+      ],
+      "user": [
+        "channels:manage",
+        "groups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel ID to unarchive"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/conversations.unarchive"
+  },
+  {
+    "name": "dialog.open",
+    "description": "Open a dialog (legacy -- use views.open for modals)",
+    "namespace": "dialog",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "dialog",
+      "trigger_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "dialog": "JSON dialog definition",
+      "trigger_id": "Trigger ID from interactive component"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": true,
+    "doc_url": "https://docs.slack.dev/reference/methods/dialog.open"
+  },
+  {
+    "name": "dnd.endDnd",
+    "description": "End the current Do Not Disturb session",
+    "namespace": "dnd",
+    "required_scopes": {
+      "user": [
+        "dnd:write"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/dnd.endDnd"
+  },
+  {
+    "name": "dnd.endSnooze",
+    "description": "End the current snooze session",
+    "namespace": "dnd",
+    "required_scopes": {
+      "user": [
+        "dnd:write"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/dnd.endSnooze"
+  },
+  {
+    "name": "dnd.info",
+    "description": "Get Do Not Disturb status for a user",
+    "namespace": "dnd",
+    "required_scopes": {
+      "bot": [
+        "dnd:read"
+      ],
+      "user": [
+        "dnd:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "user"
+    ],
+    "param_descriptions": {
+      "user": "User ID (defaults to authed user)"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/dnd.info"
+  },
+  {
+    "name": "dnd.setSnooze",
+    "description": "Set snooze for DnD",
+    "namespace": "dnd",
+    "required_scopes": {
+      "user": [
+        "dnd:write"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "num_minutes"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "num_minutes": "Minutes to snooze for"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/dnd.setSnooze"
+  },
+  {
+    "name": "dnd.teamInfo",
+    "description": "Get DnD status for multiple team members",
+    "namespace": "dnd",
+    "required_scopes": {
+      "bot": [
+        "dnd:read"
+      ],
+      "user": [
+        "dnd:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "users"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "users": "Comma-separated list of user IDs"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/dnd.teamInfo"
+  },
+  {
+    "name": "emoji.list",
+    "description": "List custom emoji for a workspace",
+    "namespace": "emoji",
+    "required_scopes": {
+      "bot": [
+        "emoji:read"
+      ],
+      "user": [
+        "emoji:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "include_categories"
+    ],
+    "param_descriptions": {},
+    "response_key": "emoji",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/emoji.list"
+  },
+  {
+    "name": "entity.present.details",
+    "description": "Present entity details",
+    "namespace": "entity",
+    "required_scopes": {},
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/entity.present.details"
+  },
+  {
+    "name": "files.comments.delete",
+    "description": "Delete a file comment",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "files:write"
+      ],
+      "user": [
+        "files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "file",
+      "id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "file": "File ID",
+      "id": "Comment ID to delete"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.comments.delete"
+  },
+  {
+    "name": "files.completeUploadExternal",
+    "description": "Complete a file upload and share it (step 2)",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "files:write"
+      ],
+      "user": [
+        "files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "files"
+    ],
+    "optional_params": [
+      "channel_id",
+      "initial_comment",
+      "thread_ts"
+    ],
+    "param_descriptions": {
+      "files": "Array of file objects with id and (optional) title",
+      "channel_id": "Channel to share the file in",
+      "initial_comment": "Message text to accompany the file",
+      "thread_ts": "Thread timestamp to share in"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.completeUploadExternal"
+  },
+  {
+    "name": "files.delete",
+    "description": "Delete a file",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "files:write"
+      ],
+      "user": [
+        "files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "file"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "file": "File ID to delete"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.delete"
+  },
+  {
+    "name": "files.getUploadURLExternal",
+    "description": "Get an upload URL for a file (step 1 of new upload flow)",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "files:write"
+      ],
+      "user": [
+        "files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "filename",
+      "length"
+    ],
+    "optional_params": [
+      "alt_text",
+      "snippet_type"
+    ],
+    "param_descriptions": {
+      "filename": "Name of the file being uploaded",
+      "length": "Size of the file in bytes",
+      "alt_text": "Alt text for the file",
+      "snippet_type": "Syntax type for code snippets"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.getUploadURLExternal"
+  },
+  {
+    "name": "files.info",
+    "description": "Get info about a file",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "files:read"
+      ],
+      "user": [
+        "files:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "file"
+    ],
+    "optional_params": [
+      "count",
+      "page"
+    ],
+    "param_descriptions": {
+      "file": "File ID",
+      "count": "Number of items per page",
+      "page": "Page number"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.info"
+  },
+  {
+    "name": "files.list",
+    "description": "List files",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "files:read"
+      ],
+      "user": [
+        "files:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "channel",
+      "count",
+      "page",
+      "show_files_hidden_by_limit",
+      "team_id",
+      "ts_from",
+      "ts_to",
+      "types",
+      "user"
+    ],
+    "param_descriptions": {
+      "channel": "Filter by channel",
+      "types": "Filter by type (spaces, snippets, images, gdocs, zips, pdfs, all)",
+      "user": "Filter by user",
+      "ts_from": "Oldest timestamp",
+      "ts_to": "Latest timestamp"
+    },
+    "response_key": "files",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.list"
+  },
+  {
+    "name": "files.remote.add",
+    "description": "Add a remote file",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "remote_files:write"
+      ],
+      "user": [
+        "remote_files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "external_id",
+      "external_url",
+      "title"
+    ],
+    "optional_params": [
+      "filetype",
+      "indexable_file_contents",
+      "preview_image"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.remote.add"
+  },
+  {
+    "name": "files.remote.info",
+    "description": "Get info about a remote file",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "remote_files:read"
+      ],
+      "user": [
+        "remote_files:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "external_id",
+      "file"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.remote.info"
+  },
+  {
+    "name": "files.remote.list",
+    "description": "List remote files",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "remote_files:read"
+      ],
+      "user": [
+        "remote_files:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "channel",
+      "ts_from",
+      "ts_to"
+    ],
+    "param_descriptions": {},
+    "response_key": "files",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.remote.list"
+  },
+  {
+    "name": "files.remote.remove",
+    "description": "Remove a remote file",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "remote_files:write"
+      ],
+      "user": [
+        "remote_files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "external_id",
+      "file"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.remote.remove"
+  },
+  {
+    "name": "files.remote.share",
+    "description": "Share a remote file",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "remote_files:share"
+      ],
+      "user": [
+        "remote_files:share"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channels"
+    ],
+    "optional_params": [
+      "external_id",
+      "file"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.remote.share"
+  },
+  {
+    "name": "files.remote.update",
+    "description": "Update a remote file",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "remote_files:write"
+      ],
+      "user": [
+        "remote_files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "external_id",
+      "external_url",
+      "file",
+      "filetype",
+      "indexable_file_contents",
+      "preview_image",
+      "title"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.remote.update"
+  },
+  {
+    "name": "files.revokePublicURL",
+    "description": "Revoke public URL for a file",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "files:write"
+      ],
+      "user": [
+        "files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "file"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.revokePublicURL"
+  },
+  {
+    "name": "files.sharedPublicURL",
+    "description": "Create a public URL for a file",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "files:write"
+      ],
+      "user": [
+        "files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "file"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.sharedPublicURL"
+  },
+  {
+    "name": "files.upload",
+    "description": "Upload a file (DEPRECATED -- use getUploadURLExternal + completeUploadExternal)",
+    "namespace": "files",
+    "required_scopes": {
+      "bot": [
+        "files:write"
+      ],
+      "user": [
+        "files:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "special",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "channels",
+      "content",
+      "file",
+      "filename",
+      "filetype",
+      "initial_comment",
+      "thread_ts",
+      "title"
+    ],
+    "param_descriptions": {
+      "channels": "Comma-separated list of channel IDs to share to",
+      "content": "File content (for text-based files)",
+      "file": "File data (multipart)",
+      "filename": "Filename",
+      "filetype": "File type identifier",
+      "initial_comment": "Message to post with the file",
+      "thread_ts": "Thread timestamp to share in",
+      "title": "Title for the file"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": true,
+    "doc_url": "https://docs.slack.dev/reference/methods/files.upload"
+  },
+  {
+    "name": "functions.completeError",
+    "description": "Report an error for a function execution",
+    "namespace": "functions",
+    "required_scopes": {},
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "error",
+      "function_execution_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/functions.completeError"
+  },
+  {
+    "name": "functions.completeSuccess",
+    "description": "Report success for a function execution",
+    "namespace": "functions",
+    "required_scopes": {},
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "function_execution_id",
+      "outputs"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/functions.completeSuccess"
+  },
+  {
+    "name": "migration.exchange",
+    "description": "Exchange legacy user IDs for Enterprise Grid user IDs",
+    "namespace": "migration",
+    "required_scopes": {
+      "user": [
+        "tokens.basic"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "users"
+    ],
+    "optional_params": [
+      "team_id",
+      "to_old"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/migration.exchange"
+  },
+  {
+    "name": "oauth.access",
+    "description": "Exchange a temporary OAuth code for a token (legacy V1)",
+    "namespace": "oauth",
+    "required_scopes": {},
+    "token_types": [],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "client_id",
+      "client_secret",
+      "code"
+    ],
+    "optional_params": [
+      "redirect_uri",
+      "single_channel"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": true,
+    "doc_url": "https://docs.slack.dev/reference/methods/oauth.access"
+  },
+  {
+    "name": "oauth.v2.access",
+    "description": "Exchange a temporary OAuth code for a token (V2)",
+    "namespace": "oauth",
+    "required_scopes": {},
+    "token_types": [],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "client_id",
+      "client_secret",
+      "code"
+    ],
+    "optional_params": [
+      "grant_type",
+      "redirect_uri",
+      "refresh_token"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/oauth.v2.access"
+  },
+  {
+    "name": "oauth.v2.exchange",
+    "description": "Exchange a legacy token for a new token",
+    "namespace": "oauth",
+    "required_scopes": {},
+    "token_types": [],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "client_id",
+      "client_secret"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/oauth.v2.exchange"
+  },
+  {
+    "name": "openid.connect.token",
+    "description": "Exchange code for OpenID Connect token",
+    "namespace": "openid",
+    "required_scopes": {},
+    "token_types": [],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "client_id",
+      "client_secret"
+    ],
+    "optional_params": [
+      "code",
+      "grant_type",
+      "redirect_uri",
+      "refresh_token"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/openid.connect.token"
+  },
+  {
+    "name": "openid.connect.userInfo",
+    "description": "Get OpenID Connect user info",
+    "namespace": "openid",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/openid.connect.userInfo"
+  },
+  {
+    "name": "pins.add",
+    "description": "Pin an item to a channel",
+    "namespace": "pins",
+    "required_scopes": {
+      "bot": [
+        "pins:write"
+      ],
+      "user": [
+        "pins:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "timestamp"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel to pin the item in",
+      "timestamp": "Timestamp of the message to pin"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/pins.add"
+  },
+  {
+    "name": "pins.list",
+    "description": "List pinned items in a channel",
+    "namespace": "pins",
+    "required_scopes": {
+      "bot": [
+        "pins:read"
+      ],
+      "user": [
+        "pins:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel to list pins for"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/pins.list"
+  },
+  {
+    "name": "pins.remove",
+    "description": "Unpin an item from a channel",
+    "namespace": "pins",
+    "required_scopes": {
+      "bot": [
+        "pins:write"
+      ],
+      "user": [
+        "pins:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "channel"
+    ],
+    "optional_params": [
+      "timestamp"
+    ],
+    "param_descriptions": {
+      "channel": "Channel containing the pinned item",
+      "timestamp": "Timestamp of the message to unpin"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/pins.remove"
+  },
+  {
+    "name": "reactions.add",
+    "description": "Add an emoji reaction to a message",
+    "namespace": "reactions",
+    "required_scopes": {
+      "bot": [
+        "reactions:write"
+      ],
+      "user": [
+        "reactions:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "channel",
+      "name",
+      "timestamp"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "channel": "Channel containing the message",
+      "name": "Emoji name without colons (e.g. 'thumbsup')",
+      "timestamp": "Timestamp of the message to react to"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/reactions.add"
+  },
+  {
+    "name": "reactions.get",
+    "description": "Get reactions for a message",
+    "namespace": "reactions",
+    "required_scopes": {
+      "bot": [
+        "reactions:read"
+      ],
+      "user": [
+        "reactions:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "channel",
+      "file",
+      "file_comment",
+      "full",
+      "timestamp"
+    ],
+    "param_descriptions": {
+      "channel": "Channel containing the message",
+      "timestamp": "Timestamp of the message",
+      "file": "File ID to get reactions for",
+      "full": "Return full reaction list for each emoji"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/reactions.get"
+  },
+  {
+    "name": "reactions.list",
+    "description": "List reactions by a user",
+    "namespace": "reactions",
+    "required_scopes": {
+      "bot": [
+        "reactions:read"
+      ],
+      "user": [
+        "reactions:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "count",
+      "full",
+      "page",
+      "team_id",
+      "user"
+    ],
+    "param_descriptions": {
+      "user": "User ID (defaults to authed user)"
+    },
+    "response_key": "items",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/reactions.list"
+  },
+  {
+    "name": "reactions.remove",
+    "description": "Remove an emoji reaction",
+    "namespace": "reactions",
+    "required_scopes": {
+      "bot": [
+        "reactions:write"
+      ],
+      "user": [
+        "reactions:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "name"
+    ],
+    "optional_params": [
+      "channel",
+      "file",
+      "file_comment",
+      "timestamp"
+    ],
+    "param_descriptions": {
+      "name": "Emoji name to remove",
+      "channel": "Channel containing the message",
+      "timestamp": "Timestamp of the message"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/reactions.remove"
+  },
+  {
+    "name": "reminders.add",
+    "description": "Create a reminder",
+    "namespace": "reminders",
+    "required_scopes": {
+      "bot": [
+        "reminders:write"
+      ],
+      "user": [
+        "reminders:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "text",
+      "time"
+    ],
+    "optional_params": [
+      "recurrence",
+      "team_id",
+      "user"
+    ],
+    "param_descriptions": {
+      "text": "Reminder text",
+      "time": "When to remind (Unix ts, natural language, or in X seconds)",
+      "user": "User to create reminder for"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/reminders.add"
+  },
+  {
+    "name": "reminders.complete",
+    "description": "Mark a reminder as complete",
+    "namespace": "reminders",
+    "required_scopes": {
+      "bot": [
+        "reminders:write"
+      ],
+      "user": [
+        "reminders:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "reminder"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "reminder": "Reminder ID"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/reminders.complete"
+  },
+  {
+    "name": "reminders.delete",
+    "description": "Delete a reminder",
+    "namespace": "reminders",
+    "required_scopes": {
+      "bot": [
+        "reminders:write"
+      ],
+      "user": [
+        "reminders:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "reminder"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "reminder": "Reminder ID"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/reminders.delete"
+  },
+  {
+    "name": "reminders.info",
+    "description": "Get info about a reminder",
+    "namespace": "reminders",
+    "required_scopes": {
+      "bot": [
+        "reminders:read"
+      ],
+      "user": [
+        "reminders:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "reminder"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "reminder": "Reminder ID"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/reminders.info"
+  },
+  {
+    "name": "reminders.list",
+    "description": "List all reminders for the authed user",
+    "namespace": "reminders",
+    "required_scopes": {
+      "bot": [
+        "reminders:read"
+      ],
+      "user": [
+        "reminders:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "team_id"
+    ],
+    "param_descriptions": {},
+    "response_key": "reminders",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/reminders.list"
+  },
+  {
+    "name": "rtm.connect",
+    "description": "Start a Real Time Messaging session (legacy)",
+    "namespace": "rtm",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "batch_presence_aware",
+      "presence_sub"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": true,
+    "doc_url": "https://docs.slack.dev/reference/methods/rtm.connect"
+  },
+  {
+    "name": "rtm.start",
+    "description": "Start a Real Time Messaging session with full state (deprecated)",
+    "namespace": "rtm",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": true,
+    "doc_url": "https://docs.slack.dev/reference/methods/rtm.start"
+  },
+  {
+    "name": "search.all",
+    "description": "Search messages and files",
+    "namespace": "search",
+    "required_scopes": {
+      "user": [
+        "search:read"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "query"
+    ],
+    "optional_params": [
+      "count",
+      "highlight",
+      "page",
+      "sort",
+      "sort_dir",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "query": "Search query text",
+      "count": "Number of results per page",
+      "highlight": "Highlight matching query terms",
+      "page": "Page number",
+      "sort": "Sort by: score, timestamp",
+      "sort_dir": "Sort direction: asc, desc"
+    },
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/search.all"
+  },
+  {
+    "name": "search.files",
+    "description": "Search files",
+    "namespace": "search",
+    "required_scopes": {
+      "user": [
+        "search:read"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "query"
+    ],
+    "optional_params": [
+      "count",
+      "highlight",
+      "page",
+      "sort",
+      "sort_dir",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "query": "Search query text",
+      "count": "Number of results per page",
+      "highlight": "Highlight matching query terms",
+      "sort": "Sort by: score, timestamp",
+      "sort_dir": "Sort direction: asc, desc"
+    },
+    "response_key": "files",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/search.files"
+  },
+  {
+    "name": "search.messages",
+    "description": "Search messages",
+    "namespace": "search",
+    "required_scopes": {
+      "user": [
+        "search:read"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "query"
+    ],
+    "optional_params": [
+      "count",
+      "highlight",
+      "page",
+      "sort",
+      "sort_dir",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "query": "Search query text",
+      "count": "Number of results per page",
+      "highlight": "Highlight matching query terms",
+      "sort": "Sort by: score, timestamp",
+      "sort_dir": "Sort direction: asc, desc"
+    },
+    "response_key": "messages",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/search.messages"
+  },
+  {
+    "name": "slackLists.access.delete",
+    "description": "Remove access to a Slack list",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:write"
+      ],
+      "user": [
+        "lists:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "list_id"
+    ],
+    "optional_params": [
+      "channel_ids",
+      "user_ids"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.access.delete"
+  },
+  {
+    "name": "slackLists.access.set",
+    "description": "Set access to a Slack list",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:write"
+      ],
+      "user": [
+        "lists:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "access_level",
+      "list_id"
+    ],
+    "optional_params": [
+      "channel_ids",
+      "user_ids"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.access.set"
+  },
+  {
+    "name": "slackLists.create",
+    "description": "Create a new Slack list",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:write"
+      ],
+      "user": [
+        "lists:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "title"
+    ],
+    "optional_params": [
+      "columns",
+      "description"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.create"
+  },
+  {
+    "name": "slackLists.download.get",
+    "description": "Get a Slack list download",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:read"
+      ],
+      "user": [
+        "lists:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "download_id",
+      "list_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.download.get"
+  },
+  {
+    "name": "slackLists.download.start",
+    "description": "Start a Slack list download",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:read"
+      ],
+      "user": [
+        "lists:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "list_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.download.start"
+  },
+  {
+    "name": "slackLists.items.create",
+    "description": "Create an item in a Slack list",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:write"
+      ],
+      "user": [
+        "lists:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "list_id"
+    ],
+    "optional_params": [
+      "values"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.items.create"
+  },
+  {
+    "name": "slackLists.items.delete",
+    "description": "Delete an item from a Slack list",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:write"
+      ],
+      "user": [
+        "lists:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "item_id",
+      "list_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.items.delete"
+  },
+  {
+    "name": "slackLists.items.deleteMultiple",
+    "description": "Delete multiple items from a Slack list",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:write"
+      ],
+      "user": [
+        "lists:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "item_ids",
+      "list_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.items.deleteMultiple"
+  },
+  {
+    "name": "slackLists.items.info",
+    "description": "Get info about a Slack list item",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:read"
+      ],
+      "user": [
+        "lists:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "item_id",
+      "list_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.items.info"
+  },
+  {
+    "name": "slackLists.items.list",
+    "description": "List items in a Slack list",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:read"
+      ],
+      "user": [
+        "lists:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "list_id"
+    ],
+    "optional_params": [
+      "limit"
+    ],
+    "param_descriptions": {},
+    "response_key": "items",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.items.list"
+  },
+  {
+    "name": "slackLists.items.update",
+    "description": "Update an item in a Slack list",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:write"
+      ],
+      "user": [
+        "lists:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "item_id",
+      "list_id"
+    ],
+    "optional_params": [
+      "values"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.items.update"
+  },
+  {
+    "name": "slackLists.update",
+    "description": "Update a Slack list",
+    "namespace": "slackLists",
+    "required_scopes": {
+      "bot": [
+        "lists:write"
+      ],
+      "user": [
+        "lists:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "list_id"
+    ],
+    "optional_params": [
+      "columns",
+      "description",
+      "title"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/slackLists.update"
+  },
+  {
+    "name": "stars.add",
+    "description": "Star an item",
+    "namespace": "stars",
+    "required_scopes": {
+      "bot": [
+        "stars:write"
+      ],
+      "user": [
+        "stars:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "channel",
+      "file",
+      "file_comment",
+      "timestamp"
+    ],
+    "param_descriptions": {
+      "channel": "Channel to star (if starring a message)",
+      "timestamp": "Timestamp of message to star",
+      "file": "File ID to star"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/stars.add"
+  },
+  {
+    "name": "stars.list",
+    "description": "List starred items",
+    "namespace": "stars",
+    "required_scopes": {
+      "bot": [
+        "stars:read"
+      ],
+      "user": [
+        "stars:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "count",
+      "page",
+      "team_id"
+    ],
+    "param_descriptions": {},
+    "response_key": "items",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/stars.list"
+  },
+  {
+    "name": "stars.remove",
+    "description": "Remove a star from an item",
+    "namespace": "stars",
+    "required_scopes": {
+      "bot": [
+        "stars:write"
+      ],
+      "user": [
+        "stars:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "channel",
+      "file",
+      "file_comment",
+      "timestamp"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/stars.remove"
+  },
+  {
+    "name": "team.accessLogs",
+    "description": "Get workspace access logs",
+    "namespace": "team",
+    "required_scopes": {
+      "user": [
+        "admin"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "before",
+      "count",
+      "page",
+      "team_id"
+    ],
+    "param_descriptions": {},
+    "response_key": "logins",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/team.accessLogs"
+  },
+  {
+    "name": "team.billableInfo",
+    "description": "Get billable user info for a workspace",
+    "namespace": "team",
+    "required_scopes": {
+      "user": [
+        "admin"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "team_id",
+      "user"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/team.billableInfo"
+  },
+  {
+    "name": "team.billingInfo",
+    "description": "Get billing info for a workspace",
+    "namespace": "team",
+    "required_scopes": {
+      "user": [
+        "admin"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "team_id"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/team.billingInfo"
+  },
+  {
+    "name": "team.externalTeams.disconnect",
+    "description": "Disconnect an external team",
+    "namespace": "team",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "target_team"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/team.externalTeams.disconnect"
+  },
+  {
+    "name": "team.externalTeams.list",
+    "description": "List external teams connected to the workspace",
+    "namespace": "team",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "connection_status_filter",
+      "slack_connect_pref_filter"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/team.externalTeams.list"
+  },
+  {
+    "name": "team.info",
+    "description": "Get workspace info",
+    "namespace": "team",
+    "required_scopes": {
+      "bot": [
+        "team:read"
+      ],
+      "user": [
+        "team:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "domain",
+      "team"
+    ],
+    "param_descriptions": {
+      "domain": "Workspace domain to query (requires team:read)",
+      "team": "Team ID to query"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/team.info"
+  },
+  {
+    "name": "team.integrationLogs",
+    "description": "Get integration activity logs for a workspace",
+    "namespace": "team",
+    "required_scopes": {
+      "user": [
+        "admin"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "app_id",
+      "change_type",
+      "count",
+      "page",
+      "service_id",
+      "team_id",
+      "user"
+    ],
+    "param_descriptions": {},
+    "response_key": "logs",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/team.integrationLogs"
+  },
+  {
+    "name": "team.preferences.list",
+    "description": "List workspace preferences",
+    "namespace": "team",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/team.preferences.list"
+  },
+  {
+    "name": "team.profile.get",
+    "description": "Get workspace custom profile fields",
+    "namespace": "team",
+    "required_scopes": {
+      "bot": [
+        "users.profile:read"
+      ],
+      "user": [
+        "users.profile:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "visibility"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/team.profile.get"
+  },
+  {
+    "name": "tooling.tokens.rotate",
+    "description": "Rotate configuration tokens",
+    "namespace": "tooling",
+    "required_scopes": {},
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "refresh_token"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/tooling.tokens.rotate"
+  },
+  {
+    "name": "usergroups.create",
+    "description": "Create a user group",
+    "namespace": "usergroups",
+    "required_scopes": {
+      "bot": [
+        "usergroups:write"
+      ],
+      "user": [
+        "usergroups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "name"
+    ],
+    "optional_params": [
+      "channels",
+      "description",
+      "handle",
+      "include_count",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "name": "Name of the user group",
+      "handle": "Mention handle (e.g. @marketing)",
+      "description": "Purpose/description of the group",
+      "channels": "Comma-separated list of channel IDs to auto-join"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/usergroups.create"
+  },
+  {
+    "name": "usergroups.disable",
+    "description": "Disable a user group",
+    "namespace": "usergroups",
+    "required_scopes": {
+      "bot": [
+        "usergroups:write"
+      ],
+      "user": [
+        "usergroups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "usergroup"
+    ],
+    "optional_params": [
+      "include_count",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "usergroup": "User group ID"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/usergroups.disable"
+  },
+  {
+    "name": "usergroups.enable",
+    "description": "Enable a user group",
+    "namespace": "usergroups",
+    "required_scopes": {
+      "bot": [
+        "usergroups:write"
+      ],
+      "user": [
+        "usergroups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "usergroup"
+    ],
+    "optional_params": [
+      "include_count",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "usergroup": "User group ID"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/usergroups.enable"
+  },
+  {
+    "name": "usergroups.list",
+    "description": "List all user groups",
+    "namespace": "usergroups",
+    "required_scopes": {
+      "bot": [
+        "usergroups:read"
+      ],
+      "user": [
+        "usergroups:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "include_count",
+      "include_disabled",
+      "include_users",
+      "team_id"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/usergroups.list"
+  },
+  {
+    "name": "usergroups.update",
+    "description": "Update a user group",
+    "namespace": "usergroups",
+    "required_scopes": {
+      "bot": [
+        "usergroups:write"
+      ],
+      "user": [
+        "usergroups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "usergroup"
+    ],
+    "optional_params": [
+      "channels",
+      "description",
+      "handle",
+      "include_count",
+      "name",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "usergroup": "User group ID"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/usergroups.update"
+  },
+  {
+    "name": "usergroups.users.list",
+    "description": "List users in a user group",
+    "namespace": "usergroups",
+    "required_scopes": {
+      "bot": [
+        "usergroups:read"
+      ],
+      "user": [
+        "usergroups:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "usergroup"
+    ],
+    "optional_params": [
+      "include_disabled",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "usergroup": "User group ID"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/usergroups.users.list"
+  },
+  {
+    "name": "usergroups.users.update",
+    "description": "Update the members of a user group",
+    "namespace": "usergroups",
+    "required_scopes": {
+      "bot": [
+        "usergroups:write"
+      ],
+      "user": [
+        "usergroups:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "usergroup",
+      "users"
+    ],
+    "optional_params": [
+      "include_count",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "usergroup": "User group ID",
+      "users": "Comma-separated list of user IDs"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/usergroups.users.update"
+  },
+  {
+    "name": "users.conversations",
+    "description": "List conversations the user is a member of",
+    "namespace": "users",
+    "required_scopes": {
+      "bot": [
+        "channels:read",
+        "groups:read",
+        "im:read",
+        "mpim:read"
+      ],
+      "user": [
+        "channels:read",
+        "groups:read",
+        "im:read",
+        "mpim:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "exclude_archived",
+      "limit",
+      "team_id",
+      "types",
+      "user"
+    ],
+    "param_descriptions": {
+      "user": "User ID (defaults to authed user)",
+      "types": "Comma-separated types: public_channel, private_channel, mpim, im",
+      "exclude_archived": "Exclude archived channels",
+      "limit": "Maximum results per page"
+    },
+    "response_key": "channels",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.conversations"
+  },
+  {
+    "name": "users.deletePhoto",
+    "description": "Delete the user's profile photo",
+    "namespace": "users",
+    "required_scopes": {
+      "user": [
+        "users.profile:write"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.deletePhoto"
+  },
+  {
+    "name": "users.discoverableContacts.lookup",
+    "description": "Lookup discoverable contacts",
+    "namespace": "users",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "email"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "email": "Email to look up"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.discoverableContacts.lookup"
+  },
+  {
+    "name": "users.getPresence",
+    "description": "Get a user's current presence status",
+    "namespace": "users",
+    "required_scopes": {
+      "bot": [
+        "users:read"
+      ],
+      "user": [
+        "users:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "user"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "user": "User ID"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.getPresence"
+  },
+  {
+    "name": "users.identity",
+    "description": "Get user identity via Sign in with Slack",
+    "namespace": "users",
+    "required_scopes": {
+      "user": [
+        "identity.basic"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.identity"
+  },
+  {
+    "name": "users.info",
+    "description": "Get info about a user",
+    "namespace": "users",
+    "required_scopes": {
+      "bot": [
+        "users:read"
+      ],
+      "user": [
+        "users:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "user"
+    ],
+    "optional_params": [
+      "include_locale"
+    ],
+    "param_descriptions": {
+      "user": "User ID to get info for",
+      "include_locale": "Include locale data"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.info"
+  },
+  {
+    "name": "users.list",
+    "description": "List all users in a workspace",
+    "namespace": "users",
+    "required_scopes": {
+      "bot": [
+        "users:read"
+      ],
+      "user": [
+        "users:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "include_locale",
+      "limit",
+      "team_id"
+    ],
+    "param_descriptions": {
+      "include_locale": "Include locale data",
+      "limit": "Maximum results per page (max 1000)",
+      "team_id": "Workspace ID (Enterprise Grid)"
+    },
+    "response_key": "members",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.list"
+  },
+  {
+    "name": "users.lookupByEmail",
+    "description": "Find a user by email address",
+    "namespace": "users",
+    "required_scopes": {
+      "bot": [
+        "users:read.email"
+      ],
+      "user": [
+        "users:read.email"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [
+      "email"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "email": "Email address to look up"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.lookupByEmail"
+  },
+  {
+    "name": "users.profile.get",
+    "description": "Get a user's profile information",
+    "namespace": "users",
+    "required_scopes": {
+      "bot": [
+        "users.profile:read"
+      ],
+      "user": [
+        "users.profile:read"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier3",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "include_labels",
+      "user"
+    ],
+    "param_descriptions": {
+      "user": "User ID (defaults to authed user)"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.profile.get"
+  },
+  {
+    "name": "users.profile.set",
+    "description": "Set a user's profile information",
+    "namespace": "users",
+    "required_scopes": {
+      "user": [
+        "users.profile:write"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "special",
+    "rate_note": "10 updates/min per user, 30 profiles/min workspace-wide",
+    "required_params": [],
+    "optional_params": [
+      "name",
+      "profile",
+      "user",
+      "value"
+    ],
+    "param_descriptions": {
+      "profile": "JSON profile object to set",
+      "name": "Name of a single field to set",
+      "value": "Value for the single field",
+      "user": "User ID (admin only)"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.profile.set"
+  },
+  {
+    "name": "users.setPhoto",
+    "description": "Set the user's profile photo",
+    "namespace": "users",
+    "required_scopes": {
+      "user": [
+        "users.profile:write"
+      ]
+    },
+    "token_types": [
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "image"
+    ],
+    "optional_params": [
+      "crop_w",
+      "crop_x",
+      "crop_y"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.setPhoto"
+  },
+  {
+    "name": "users.setPresence",
+    "description": "Set the user's presence status",
+    "namespace": "users",
+    "required_scopes": {
+      "bot": [
+        "users:write"
+      ],
+      "user": [
+        "users:write"
+      ]
+    },
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "presence"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "presence": "Either 'auto' or 'away'"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/users.setPresence"
+  },
+  {
+    "name": "views.open",
+    "description": "Open a modal view",
+    "namespace": "views",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier4",
+    "rate_note": "",
+    "required_params": [
+      "trigger_id",
+      "view"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "trigger_id": "Trigger ID from an interactive component or slash command",
+      "view": "JSON view object defining the modal"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/views.open"
+  },
+  {
+    "name": "views.publish",
+    "description": "Publish a view to the App Home tab",
+    "namespace": "views",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier4",
+    "rate_note": "",
+    "required_params": [
+      "user_id",
+      "view"
+    ],
+    "optional_params": [
+      "hash"
+    ],
+    "param_descriptions": {
+      "user_id": "User ID to publish the App Home for",
+      "view": "JSON view object for the App Home tab",
+      "hash": "View hash for optimistic locking"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/views.publish"
+  },
+  {
+    "name": "views.push",
+    "description": "Push a new view onto the modal stack",
+    "namespace": "views",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier4",
+    "rate_note": "",
+    "required_params": [
+      "trigger_id",
+      "view"
+    ],
+    "optional_params": [],
+    "param_descriptions": {
+      "trigger_id": "Trigger ID from an interactive component",
+      "view": "JSON view object to push"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/views.push"
+  },
+  {
+    "name": "views.update",
+    "description": "Update an existing view",
+    "namespace": "views",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier4",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [
+      "external_id",
+      "hash",
+      "view",
+      "view_id"
+    ],
+    "param_descriptions": {
+      "view_id": "ID of the view to update",
+      "view": "JSON view object with updates",
+      "external_id": "External ID of the view",
+      "hash": "View hash for optimistic locking"
+    },
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/views.update"
+  },
+  {
+    "name": "workflows.featured.add",
+    "description": "Add a workflow to featured",
+    "namespace": "workflows",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "workflow_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/workflows.featured.add"
+  },
+  {
+    "name": "workflows.featured.list",
+    "description": "List featured workflows",
+    "namespace": "workflows",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": "workflows",
+    "paginated": true,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/workflows.featured.list"
+  },
+  {
+    "name": "workflows.featured.remove",
+    "description": "Remove a workflow from featured",
+    "namespace": "workflows",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "workflow_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/workflows.featured.remove"
+  },
+  {
+    "name": "workflows.featured.set",
+    "description": "Set the featured workflows list",
+    "namespace": "workflows",
+    "required_scopes": {},
+    "token_types": [
+      "bot",
+      "user"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "workflow_ids"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/workflows.featured.set"
+  },
+  {
+    "name": "workflows.stepCompleted",
+    "description": "Report a workflow step as completed",
+    "namespace": "workflows",
+    "required_scopes": {
+      "bot": [
+        "workflow.steps:execute"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "workflow_step_execute_id"
+    ],
+    "optional_params": [
+      "outputs"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/workflows.stepCompleted"
+  },
+  {
+    "name": "workflows.stepFailed",
+    "description": "Report a workflow step as failed",
+    "namespace": "workflows",
+    "required_scopes": {
+      "bot": [
+        "workflow.steps:execute"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "error",
+      "workflow_step_execute_id"
+    ],
+    "optional_params": [],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/workflows.stepFailed"
+  },
+  {
+    "name": "workflows.updateStep",
+    "description": "Update configuration for a workflow step",
+    "namespace": "workflows",
+    "required_scopes": {
+      "bot": [
+        "workflow.steps:execute"
+      ]
+    },
+    "token_types": [
+      "bot"
+    ],
+    "rate_tier": "tier2",
+    "rate_note": "",
+    "required_params": [
+      "workflow_step_edit_id"
+    ],
+    "optional_params": [
+      "inputs",
+      "outputs",
+      "step_image_url",
+      "step_name"
+    ],
+    "param_descriptions": {},
+    "response_key": null,
+    "paginated": false,
+    "deprecated": false,
+    "doc_url": "https://docs.slack.dev/reference/methods/workflows.updateStep"
+  }
+]
