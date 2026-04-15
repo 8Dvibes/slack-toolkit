@@ -17,6 +17,12 @@ Run safe bulk operations across Slack channels with mandatory dry-run-first beha
 - **Bulk set topic** -- set/update topics on multiple channels at once
 - **Bulk set purpose** -- set/update purpose on multiple channels at once
 - **Bulk kick** -- remove a user from multiple channels
+- **Clone members** -- copy all members from one channel to another
+- **Invite all** -- invite ALL workspace members to a channel
+- **Export members** -- export member list as CSV/JSON/markdown
+- **Diff channels** -- compare membership of two channels
+- **Pick random** -- choose a random non-bot member from a channel
+- **Find inactive** -- list members who haven't posted in N days
 
 ## Procedure
 
@@ -178,6 +184,72 @@ User asks: "Add Tyler, Sara, and Wade to #ops and #alerts"
    slack-cli conversations topic C0456DEF "Status: Active | Lead: @tyler | Wiki: https://..."
    ```
 
+## New Bulk Commands (v0.2.0)
+
+### Clone members from one channel to another
+
+```bash
+# Dry run first
+slack-cli conversations clone-members --from C0123ABC --to C0456DEF --dry-run
+
+# Execute
+slack-cli conversations clone-members --from C0123ABC --to C0456DEF
+```
+
+### Invite ALL workspace members to a channel
+
+```bash
+# Dry run to see who would be invited
+slack-cli conversations invite-all C0XXXXXXXXX --dry-run
+
+# Execute
+slack-cli conversations invite-all C0XXXXXXXXX
+```
+
+### Export channel member list
+
+```bash
+# Table format (default)
+slack-cli conversations export-members C0XXXXXXXXX
+
+# CSV format
+slack-cli conversations export-members C0XXXXXXXXX --format csv > members.csv
+
+# Markdown format
+slack-cli conversations export-members C0XXXXXXXXX --format markdown
+
+# JSON
+slack-cli conversations export-members C0XXXXXXXXX --json
+```
+
+### Compare membership of two channels
+
+```bash
+slack-cli conversations diff C0AAAAAAA C0BBBBBBB
+```
+
+Output shows: who's only in A, only in B, and in both.
+
+### Pick a random member from a channel
+
+```bash
+# Returns one random non-bot member
+slack-cli conversations random C0XXXXXXXXX
+```
+
+### Find inactive members (haven't posted in N days)
+
+```bash
+# Default: 30 days
+slack-cli conversations inactive C0XXXXXXXXX
+
+# Custom threshold
+slack-cli conversations inactive C0XXXXXXXXX --days 60
+
+# JSON for scripting
+slack-cli conversations inactive C0XXXXXXXXX --days 30 --json
+```
+
 ## Safety Rules
 
 - **Mandatory dry-run.** Never skip the plan step. Even for "just 2 channels."
@@ -186,6 +258,7 @@ User asks: "Add Tyler, Sara, and Wade to #ops and #alerts"
 - **Kick is sensitive.** Double-confirm before bulk kicks: "You are about to remove USER from N channels. Are you sure?"
 - **Rate limiting.** Slack Tier 2 methods (invite, archive, topic) allow ~20 requests per minute. For large batches (50+ channels), add a short pause between calls.
 - **Never bulk-operate without explicit profile selection.** If the user has multiple profiles, confirm which workspace before executing.
+- **invite-all is a heavy operation.** It calls users.list to get all workspace members, then invites in batches. Use dry-run first to estimate the scope.
 
 ## Tips
 
@@ -193,3 +266,4 @@ User asks: "Add Tyler, Sara, and Wade to #ops and #alerts"
 - The `conversations invite` command accepts comma-separated user IDs, so you can invite up to 30 users in a single call (Slack API limit)
 - For "stale channel" detection, also check if the channel has 0 or 1 members as an additional signal
 - If the user says "archive everything except #general", make sure to explicitly exclude protected channels in the plan
+- Use `conversations diff` to audit channel membership before bulk operations

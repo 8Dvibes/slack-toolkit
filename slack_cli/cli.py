@@ -310,6 +310,75 @@ def cmd_conv_leave(args):
     leave_conversation(client, channel=args.channel, as_json=args.json)
 
 
+def cmd_conv_open(args):
+    from .conversations import open_dm
+    client = _build_client(args)
+    open_dm(client, users=args.users, as_json=args.json)
+
+
+def cmd_conv_invite_all(args):
+    from .conversations import invite_all_to_conversation
+    client = _build_client(args)
+    invite_all_to_conversation(
+        client,
+        channel=args.channel,
+        dry_run=args.dry_run,
+        as_json=args.json,
+    )
+
+
+def cmd_conv_clone_members(args):
+    from .conversations import clone_members
+    client = _build_client(args)
+    clone_members(
+        client,
+        from_channel=args.from_channel,
+        to_channel=args.to_channel,
+        dry_run=args.dry_run,
+        as_json=args.json,
+    )
+
+
+def cmd_conv_export_members(args):
+    from .conversations import export_members
+    client = _build_client(args)
+    export_members(
+        client,
+        channel=args.channel,
+        fmt=args.format,
+        as_json=args.json,
+    )
+
+
+def cmd_conv_diff(args):
+    from .conversations import diff_channels
+    client = _build_client(args)
+    diff_channels(
+        client,
+        channel_a=args.channel_a,
+        channel_b=args.channel_b,
+        as_json=args.json,
+    )
+
+
+def cmd_conv_random(args):
+    from .conversations import pick_random_member
+    client = _build_client(args)
+    pick_random_member(client, channel=args.channel, as_json=args.json)
+
+
+def cmd_conv_inactive(args):
+    from .conversations import list_inactive_members
+    client = _build_client(args)
+    list_inactive_members(
+        client,
+        channel=args.channel,
+        days=args.days,
+        dry_run=args.dry_run,
+        as_json=args.json,
+    )
+
+
 # ---------------------------------------------------------------------------
 # Users subcommands
 # ---------------------------------------------------------------------------
@@ -609,12 +678,253 @@ def cmd_methods_namespaces(args):
 
 def cmd_methods_update(args):
     from .methods import cmd_update
-    cmd_update(as_json=args.json)
+    cmd_update(as_json=args.json, live=getattr(args, "live", False))
 
 
 def cmd_methods_info(args):
     from .methods import cmd_info
     cmd_info(as_json=args.json)
+
+
+# ---------------------------------------------------------------------------
+# Usergroups subcommands
+# ---------------------------------------------------------------------------
+
+
+def cmd_ug_create(args):
+    from .usergroups import create_usergroup
+    client = _build_client(args)
+    create_usergroup(
+        client,
+        name=args.name,
+        handle=getattr(args, "handle", None),
+        description=getattr(args, "description", None),
+        channels=getattr(args, "channels", None),
+        as_json=args.json,
+    )
+
+
+def cmd_ug_list(args):
+    from .usergroups import list_usergroups
+    client = _build_client(args)
+    list_usergroups(
+        client,
+        include_disabled=getattr(args, "include_disabled", False),
+        include_users=getattr(args, "include_users", False),
+        as_json=args.json,
+    )
+
+
+def cmd_ug_update(args):
+    from .usergroups import update_usergroup
+    client = _build_client(args)
+    update_usergroup(
+        client,
+        usergroup=args.usergroup,
+        name=getattr(args, "name", None),
+        handle=getattr(args, "handle", None),
+        description=getattr(args, "description", None),
+        channels=getattr(args, "channels", None),
+        as_json=args.json,
+    )
+
+
+def cmd_ug_disable(args):
+    from .usergroups import disable_usergroup
+    client = _build_client(args)
+    disable_usergroup(client, usergroup=args.usergroup, as_json=args.json)
+
+
+def cmd_ug_enable(args):
+    from .usergroups import enable_usergroup
+    client = _build_client(args)
+    enable_usergroup(client, usergroup=args.usergroup, as_json=args.json)
+
+
+def cmd_ug_members_list(args):
+    from .usergroups import list_usergroup_members
+    client = _build_client(args)
+    list_usergroup_members(
+        client,
+        usergroup=args.usergroup,
+        include_disabled=getattr(args, "include_disabled", False),
+        as_json=args.json,
+    )
+
+
+def cmd_ug_members_update(args):
+    from .usergroups import update_usergroup_members
+    client = _build_client(args)
+    update_usergroup_members(
+        client,
+        usergroup=args.usergroup,
+        users=args.users,
+        as_json=args.json,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Canvas subcommands
+# ---------------------------------------------------------------------------
+
+
+def cmd_canvas_create(args):
+    from .canvas import create_canvas
+    client = _build_client(args)
+    create_canvas(
+        client,
+        title=getattr(args, "title", None),
+        content=getattr(args, "content", None),
+        channel_id=getattr(args, "channel", None),
+        as_json=args.json,
+    )
+
+
+def cmd_canvas_edit(args):
+    from .canvas import edit_canvas
+    client = _build_client(args)
+    edit_canvas(
+        client,
+        canvas_id=args.canvas_id,
+        changes=args.changes,
+        as_json=args.json,
+    )
+
+
+def cmd_canvas_delete(args):
+    from .canvas import delete_canvas
+    client = _build_client(args)
+    delete_canvas(client, canvas_id=args.canvas_id, as_json=args.json)
+
+
+def cmd_canvas_access_set(args):
+    from .canvas import set_canvas_access
+    client = _build_client(args)
+    set_canvas_access(
+        client,
+        canvas_id=args.canvas_id,
+        access_level=args.access_level,
+        user_ids=getattr(args, "users", None),
+        channel_ids=getattr(args, "channels", None),
+        as_json=args.json,
+    )
+
+
+def cmd_canvas_access_delete(args):
+    from .canvas import delete_canvas_access
+    client = _build_client(args)
+    delete_canvas_access(
+        client,
+        canvas_id=args.canvas_id,
+        user_ids=getattr(args, "users", None),
+        channel_ids=getattr(args, "channels", None),
+        as_json=args.json,
+    )
+
+
+def cmd_canvas_sections(args):
+    from .canvas import list_canvas_sections
+    client = _build_client(args)
+    list_canvas_sections(
+        client,
+        canvas_id=args.canvas_id,
+        contains_text=getattr(args, "contains_text", None),
+        as_json=args.json,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Reminders subcommands
+# ---------------------------------------------------------------------------
+
+
+def cmd_reminders_add(args):
+    from .reminders import add_reminder
+    client = _build_client(args)
+    add_reminder(
+        client,
+        text=args.text,
+        time=args.time,
+        user=getattr(args, "user", None),
+        as_json=args.json,
+    )
+
+
+def cmd_reminders_list(args):
+    from .reminders import list_reminders
+    client = _build_client(args)
+    list_reminders(client, as_json=args.json)
+
+
+def cmd_reminders_complete(args):
+    from .reminders import complete_reminder
+    client = _build_client(args)
+    complete_reminder(client, reminder=args.reminder, as_json=args.json)
+
+
+def cmd_reminders_delete(args):
+    from .reminders import delete_reminder
+    client = _build_client(args)
+    delete_reminder(client, reminder=args.reminder, as_json=args.json)
+
+
+def cmd_reminders_info(args):
+    from .reminders import get_reminder_info
+    client = _build_client(args)
+    get_reminder_info(client, reminder=args.reminder, as_json=args.json)
+
+
+# ---------------------------------------------------------------------------
+# DND subcommands
+# ---------------------------------------------------------------------------
+
+
+def cmd_dnd_info(args):
+    from .dnd import get_dnd_info
+    client = _build_client(args)
+    get_dnd_info(client, user=getattr(args, "user", None), as_json=args.json)
+
+
+def cmd_dnd_set_snooze(args):
+    from .dnd import set_snooze
+    client = _build_client(args)
+    set_snooze(client, num_minutes=args.minutes, as_json=args.json)
+
+
+def cmd_dnd_end_snooze(args):
+    from .dnd import end_snooze
+    client = _build_client(args)
+    end_snooze(client, as_json=args.json)
+
+
+def cmd_dnd_end_dnd(args):
+    from .dnd import end_dnd
+    client = _build_client(args)
+    end_dnd(client, as_json=args.json)
+
+
+def cmd_dnd_team_info(args):
+    from .dnd import get_team_dnd_info
+    client = _build_client(args)
+    get_team_dnd_info(
+        client,
+        users=getattr(args, "users", None),
+        as_json=args.json,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Docs command
+# ---------------------------------------------------------------------------
+
+
+def cmd_docs(args):
+    from .docs import cmd_docs as _cmd_docs
+    _cmd_docs(
+        method_name=args.method,
+        fresh=getattr(args, "fresh", False),
+        as_json=args.json,
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -805,6 +1115,46 @@ def build_parser() -> argparse.ArgumentParser:
     clv.add_argument("channel", help="Channel ID")
     clv.set_defaults(func=cmd_conv_leave)
 
+    cop = conv_sub.add_parser("open", help="Open a DM or group DM")
+    cop.add_argument("--users", required=True, help="Comma-separated user IDs or emails")
+    cop.set_defaults(func=cmd_conv_open)
+
+    cia = conv_sub.add_parser("invite-all", help="Invite all workspace members to a channel")
+    cia.add_argument("channel", help="Channel ID")
+    cia.add_argument("--dry-run", action="store_true", help="Show what would happen, don't execute")
+    cia.set_defaults(func=cmd_conv_invite_all)
+
+    ccm = conv_sub.add_parser("clone-members", help="Copy members from one channel to another")
+    ccm.add_argument("--from", dest="from_channel", required=True, help="Source channel ID")
+    ccm.add_argument("--to", dest="to_channel", required=True, help="Target channel ID")
+    ccm.add_argument("--dry-run", action="store_true", help="Show what would happen, don't execute")
+    ccm.set_defaults(func=cmd_conv_clone_members)
+
+    cem = conv_sub.add_parser("export-members", help="Export channel member list")
+    cem.add_argument("channel", help="Channel ID")
+    cem.add_argument(
+        "--format",
+        choices=["table", "csv", "json", "markdown"],
+        default="table",
+        help="Output format (default: table)",
+    )
+    cem.set_defaults(func=cmd_conv_export_members)
+
+    cdiff = conv_sub.add_parser("diff", help="Compare membership of two channels")
+    cdiff.add_argument("channel_a", help="First channel ID")
+    cdiff.add_argument("channel_b", help="Second channel ID")
+    cdiff.set_defaults(func=cmd_conv_diff)
+
+    crand = conv_sub.add_parser("random", help="Pick a random member from a channel")
+    crand.add_argument("channel", help="Channel ID")
+    crand.set_defaults(func=cmd_conv_random)
+
+    cinact = conv_sub.add_parser("inactive", help="List members who haven't posted recently")
+    cinact.add_argument("channel", help="Channel ID")
+    cinact.add_argument("--days", type=int, default=30, help="Inactivity threshold in days (default: 30)")
+    cinact.add_argument("--dry-run", action="store_true", help="Report only, don't take action")
+    cinact.set_defaults(func=cmd_conv_inactive)
+
     # ---- users ----
     users_p = sub.add_parser("users", help="User operations")
     users_sub = users_p.add_subparsers(dest="users_cmd")
@@ -991,10 +1341,143 @@ def build_parser() -> argparse.ArgumentParser:
     mn.set_defaults(func=cmd_methods_namespaces)
 
     mu = methods_sub.add_parser("update", help="Update local method catalog")
+    mu.add_argument("--live", action="store_true", help="Fetch live method list from docs.slack.dev")
     mu.set_defaults(func=cmd_methods_update)
 
     mi = methods_sub.add_parser("info", help="Show catalog status")
     mi.set_defaults(func=cmd_methods_info)
+
+    # ---- docs ----
+    docs_p = sub.add_parser("docs", help="Look up Slack API method documentation")
+    docs_p.add_argument("method", help="Method name (e.g. conversations.open)")
+    docs_p.add_argument("--fresh", action="store_true", help="Bypass cache and fetch live")
+    docs_p.set_defaults(func=cmd_docs)
+
+    # ---- usergroups ----
+    ug_p = sub.add_parser("usergroups", aliases=["ug"], help="User group management")
+    ug_sub = ug_p.add_subparsers(dest="ug_cmd")
+
+    ugc = ug_sub.add_parser("create", help="Create a user group")
+    ugc.add_argument("name", help="User group name")
+    ugc.add_argument("--handle", help="Mention handle (without @)")
+    ugc.add_argument("--description", help="Description")
+    ugc.add_argument("--channels", help="Comma-separated channel IDs to auto-add")
+    ugc.set_defaults(func=cmd_ug_create)
+
+    ugl = ug_sub.add_parser("list", help="List user groups")
+    ugl.add_argument("--include-disabled", action="store_true", help="Include disabled groups")
+    ugl.add_argument("--include-users", action="store_true", help="Include member lists")
+    ugl.set_defaults(func=cmd_ug_list)
+
+    ugu = ug_sub.add_parser("update", help="Update a user group")
+    ugu.add_argument("usergroup", help="User group ID")
+    ugu.add_argument("--name", help="New name")
+    ugu.add_argument("--handle", help="New handle")
+    ugu.add_argument("--description", help="New description")
+    ugu.add_argument("--channels", help="New channel IDs (comma-separated)")
+    ugu.set_defaults(func=cmd_ug_update)
+
+    ugdis = ug_sub.add_parser("disable", help="Disable a user group")
+    ugdis.add_argument("usergroup", help="User group ID")
+    ugdis.set_defaults(func=cmd_ug_disable)
+
+    ugen = ug_sub.add_parser("enable", help="Enable a user group")
+    ugen.add_argument("usergroup", help="User group ID")
+    ugen.set_defaults(func=cmd_ug_enable)
+
+    ugml = ug_sub.add_parser("members-list", help="List members of a user group")
+    ugml.add_argument("usergroup", help="User group ID")
+    ugml.add_argument("--include-disabled", action="store_true")
+    ugml.set_defaults(func=cmd_ug_members_list)
+
+    ugmu = ug_sub.add_parser("members-update", help="Set members of a user group")
+    ugmu.add_argument("usergroup", help="User group ID")
+    ugmu.add_argument("--users", required=True, help="Comma-separated user IDs (replaces existing list)")
+    ugmu.set_defaults(func=cmd_ug_members_update)
+
+    # ---- canvas ----
+    cv_p = sub.add_parser("canvas", help="Canvas management")
+    cv_sub = cv_p.add_subparsers(dest="cv_cmd")
+
+    cvc = cv_sub.add_parser("create", help="Create a canvas")
+    cvc.add_argument("--title", help="Canvas title")
+    cvc.add_argument("--content", help="Markdown content")
+    cvc.add_argument("--channel", help="Create as channel canvas (channel ID)")
+    cvc.set_defaults(func=cmd_canvas_create)
+
+    cve = cv_sub.add_parser("edit", help="Edit a canvas")
+    cve.add_argument("canvas_id", help="Canvas ID")
+    cve.add_argument("--changes", required=True, help="JSON array of change operations")
+    cve.set_defaults(func=cmd_canvas_edit)
+
+    cvd = cv_sub.add_parser("delete", help="Delete a canvas")
+    cvd.add_argument("canvas_id", help="Canvas ID")
+    cvd.set_defaults(func=cmd_canvas_delete)
+
+    cvas = cv_sub.add_parser("access-set", help="Set canvas access")
+    cvas.add_argument("canvas_id", help="Canvas ID")
+    cvas.add_argument("access_level", choices=["read", "write"], help="Access level")
+    cvas.add_argument("--users", help="Comma-separated user IDs")
+    cvas.add_argument("--channels", help="Comma-separated channel IDs")
+    cvas.set_defaults(func=cmd_canvas_access_set)
+
+    cvad = cv_sub.add_parser("access-delete", help="Revoke canvas access")
+    cvad.add_argument("canvas_id", help="Canvas ID")
+    cvad.add_argument("--users", help="Comma-separated user IDs")
+    cvad.add_argument("--channels", help="Comma-separated channel IDs")
+    cvad.set_defaults(func=cmd_canvas_access_delete)
+
+    cvs = cv_sub.add_parser("sections", help="List canvas sections")
+    cvs.add_argument("canvas_id", help="Canvas ID")
+    cvs.add_argument("--contains-text", help="Filter by text content")
+    cvs.set_defaults(func=cmd_canvas_sections)
+
+    # ---- reminders ----
+    rem_p = sub.add_parser("reminders", aliases=["rem"], help="Reminder management")
+    rem_sub = rem_p.add_subparsers(dest="rem_cmd")
+
+    rea = rem_sub.add_parser("add", help="Create a reminder")
+    rea.add_argument("text", help="Reminder text")
+    rea.add_argument("time", help="When (Unix ts, 'in 30 minutes', or ISO 8601)")
+    rea.add_argument("--user", help="User ID to create reminder for")
+    rea.set_defaults(func=cmd_reminders_add)
+
+    rel = rem_sub.add_parser("list", help="List reminders")
+    rel.set_defaults(func=cmd_reminders_list)
+
+    rec = rem_sub.add_parser("complete", help="Mark a reminder complete")
+    rec.add_argument("reminder", help="Reminder ID")
+    rec.set_defaults(func=cmd_reminders_complete)
+
+    red = rem_sub.add_parser("delete", help="Delete a reminder")
+    red.add_argument("reminder", help="Reminder ID")
+    red.set_defaults(func=cmd_reminders_delete)
+
+    rei = rem_sub.add_parser("info", help="Get reminder details")
+    rei.add_argument("reminder", help="Reminder ID")
+    rei.set_defaults(func=cmd_reminders_info)
+
+    # ---- dnd ----
+    dnd_p = sub.add_parser("dnd", help="Do Not Disturb management")
+    dnd_sub = dnd_p.add_subparsers(dest="dnd_cmd")
+
+    dndi = dnd_sub.add_parser("info", help="Get DND status for a user")
+    dndi.add_argument("--user", help="User ID (default: authed user)")
+    dndi.set_defaults(func=cmd_dnd_info)
+
+    dndss = dnd_sub.add_parser("set-snooze", help="Enable snooze")
+    dndss.add_argument("--minutes", type=int, required=True, help="Snooze duration in minutes")
+    dndss.set_defaults(func=cmd_dnd_set_snooze)
+
+    dndes = dnd_sub.add_parser("end-snooze", help="End active snooze")
+    dndes.set_defaults(func=cmd_dnd_end_snooze)
+
+    dnded = dnd_sub.add_parser("end-dnd", help="End DND session")
+    dnded.set_defaults(func=cmd_dnd_end_dnd)
+
+    dndti = dnd_sub.add_parser("team-info", help="Get DND info for team members")
+    dndti.add_argument("--users", help="Comma-separated user IDs")
+    dndti.set_defaults(func=cmd_dnd_team_info)
 
     # ---- skills ----
     skills_p = sub.add_parser("skills", help="Manage Claude Code skills")

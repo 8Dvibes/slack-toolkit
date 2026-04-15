@@ -10,17 +10,68 @@ Modeled after n8n-cli's node catalog (n8n_cli/nodes.py).
 """
 
 import json
+import re
 import shutil
+import ssl
 import sys
+import time
+import urllib.error
+import urllib.request
 from pathlib import Path
 from typing import List, Optional
 
 # Where we store the user-local catalog cache
 CATALOG_DIR = Path.home() / ".slack-cli" / "methods"
 CATALOG_FILE = CATALOG_DIR / "catalog.json"
+META_FILE = CATALOG_DIR / "meta.json"
 
 # Bundled catalog shipped with the package
 BUNDLED_CATALOG = Path(__file__).parent / "catalog_data" / "methods.json"
+
+# Catalog staleness threshold (30 days)
+CATALOG_TTL_DAYS = 30
+CATALOG_TTL_SECONDS = CATALOG_TTL_DAYS * 86400
+
+# Slack docs URL for live-updating
+SLACK_DOCS_METHODS_URL = "https://docs.slack.dev/reference/methods"
+
+
+def _write_meta(method_count: int) -> None:
+    """Write metadata about the catalog."""
+    meta = {
+        "method_count": method_count,
+        "updated_at": time.time(),
+        "updated_at_human": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
+    }
+    with open(META_FILE, "w") as f:
+        json.dump(meta, f, indent=2)
+
+
+def _read_meta() -> dict:
+    """Read catalog metadata."""
+    if not META_FILE.exists():
+        return {}
+    try:
+        with open(META_FILE) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def _check_staleness() -> None:
+    """Warn if the catalog is older than 30 days."""
+    meta = _read_meta()
+    updated_at = meta.get("updated_at", 0)
+    if not updated_at:
+        return
+    age_days = (time.time() - updated_at) / 86400
+    if age_days > CATALOG_TTL_DAYS:
+        age_int = int(age_days)
+        print(
+            f"Slack API catalog is {age_int} days old. "
+            "Run 'slack-cli methods update' to refresh.",
+            file=sys.stderr,
+        )
 
 
 def ensure_catalog(force: bool = False) -> None:
@@ -32,6 +83,7 @@ def ensure_catalog(force: bool = False) -> None:
     CATALOG_DIR.mkdir(parents=True, exist_ok=True)
 
     if CATALOG_FILE.exists() and not force:
+        _check_staleness()
         return
 
     if not BUNDLED_CATALOG.exists():
@@ -47,6 +99,10 @@ def ensure_catalog(force: bool = False) -> None:
         sys.exit(1)
 
     shutil.copy2(BUNDLED_CATALOG, CATALOG_FILE)
+    # Write meta on first copy
+    with open(BUNDLED_CATALOG) as f:
+        catalog = json.load(f)
+    _write_meta(len(catalog))
 
 
 def load_catalog() -> list:
@@ -298,23 +354,146 @@ def cmd_namespaces(as_json: bool = False) -> None:
         print(format_namespaces(namespaces))
 
 
-def cmd_update(as_json: bool = False) -> None:
-    """Force-update the local catalog from bundled data."""
-    ensure_catalog(force=True)
-    catalog = load_catalog()
-    namespaces = set(m["namespace"] for m in catalog)
-    info = {
-        "method_count": len(catalog),
-        "namespace_count": len(namespaces),
-        "catalog_path": str(CATALOG_FILE),
-    }
-    if as_json:
-        print(json.dumps(info, indent=2))
+def _fetch_live_methods() -> list:
+    """Fetch method names from docs.slack.dev.
+
+    Returns list of method name strings found on the page.
+    """
+    ctx = ssl.create_default_context()
+    req = urllib.request.Request(
+        SLACK_DOCS_METHODS_URL,
+        headers={"User-Agent": "slack-cli/0.2.0 (catalog updater)"},
+    )
+    try:
+        with urllib.request.urlopen(req, context=ctx, timeout=20) as resp:
+            html = resp.read().decode("utf-8", errors="replace")
+    except (urllib.error.URLError, urllib.error.HTTPError) as e:
+        print(f"Warning: Could not fetch live methods: {e}", file=sys.stderr)
+        return []
+
+    # Extract method names: look for patterns like `method.name` in backtick blocks
+    # or in href patterns like /reference/methods/chat.postmessage
+    found = set()
+
+    # Pattern 1: href links to method pages
+    href_matches = re.findall(
+        r'href="[^"]*?/reference/methods/([a-z][a-zA-Z0-9._]+)"',
+        html,
+    )
+    for m in href_matches:
+        # Convert URL slug to method name (dots preserved, underscores in camelCase)
+        found.add(m)
+
+    # Pattern 2: backtick-wrapped method names in the page
+    backtick_matches = re.findall(r"`([a-z][a-zA-Z0-9]+(?:\.[a-zA-Z][a-zA-Z0-9]*)+)`", html)
+    for m in backtick_matches:
+        found.add(m)
+
+    return sorted(found)
+
+
+def cmd_update(as_json: bool = False, live: bool = False) -> None:
+    """Update the local catalog.
+
+    If --live, attempts to fetch from docs.slack.dev and add new methods.
+    Otherwise, resets to the bundled catalog.
+    """
+    if live:
+        # Fetch live method list
+        print("Fetching live method list from docs.slack.dev...", file=sys.stderr)
+        live_methods = _fetch_live_methods()
+
+        # Load current catalog
+        ensure_catalog()
+        catalog = load_catalog()
+        existing_names = set(m["name"] for m in catalog)
+
+        added = []
+        deprecated_count = 0
+
+        if live_methods:
+            # Add newly discovered methods
+            for name in live_methods:
+                if name not in existing_names:
+                    # Derive namespace from method name
+                    parts = name.split(".")
+                    namespace = ".".join(parts[:-1]) if len(parts) > 1 else parts[0]
+                    new_entry = {
+                        "name": name,
+                        "description": f"Slack API method: {name}",
+                        "namespace": namespace,
+                        "required_scopes": {},
+                        "token_types": ["bot"],
+                        "rate_tier": "tier2",
+                        "rate_note": "",
+                        "required_params": [],
+                        "optional_params": [],
+                        "param_descriptions": {},
+                        "response_key": None,
+                        "paginated": False,
+                        "deprecated": False,
+                        "doc_url": f"https://docs.slack.dev/reference/methods/{name}",
+                    }
+                    catalog.append(new_entry)
+                    added.append(name)
+
+            # Mark methods not in live list as potentially deprecated
+            live_set = set(live_methods)
+            for m in catalog:
+                if (
+                    m["name"] not in live_set
+                    and not m.get("deprecated")
+                    and "admin" not in m["name"]  # admin methods often not listed
+                ):
+                    m["deprecated"] = True
+                    deprecated_count += 1
+
+        # Save updated catalog
+        catalog.sort(key=lambda x: x["name"])
+        with open(CATALOG_FILE, "w") as f:
+            json.dump(catalog, f, indent=2)
+        _write_meta(len(catalog))
+
+        namespaces = set(m["namespace"] for m in catalog)
+        info = {
+            "method_count": len(catalog),
+            "namespace_count": len(namespaces),
+            "added": len(added),
+            "deprecated": deprecated_count,
+            "new_methods": added,
+            "catalog_path": str(CATALOG_FILE),
+        }
+        if as_json:
+            print(json.dumps(info, indent=2))
+        else:
+            print(f"Method catalog updated from docs.slack.dev.")
+            print(f"  Methods: {info['method_count']}")
+            print(f"  Namespaces: {info['namespace_count']}")
+            print(f"  Added: {info['added']}")
+            print(f"  Newly deprecated: {info['deprecated']}")
+            print(f"  Path: {info['catalog_path']}")
+            if added:
+                print(f"\nNew methods:")
+                for name in added:
+                    print(f"  + {name}")
     else:
-        print(f"Method catalog updated.")
-        print(f"  Methods: {info['method_count']}")
-        print(f"  Namespaces: {info['namespace_count']}")
-        print(f"  Path: {info['catalog_path']}")
+        # Reset to bundled catalog
+        ensure_catalog(force=True)
+        catalog = load_catalog()
+        _write_meta(len(catalog))
+        namespaces = set(m["namespace"] for m in catalog)
+        info = {
+            "method_count": len(catalog),
+            "namespace_count": len(namespaces),
+            "catalog_path": str(CATALOG_FILE),
+        }
+        if as_json:
+            print(json.dumps(info, indent=2))
+        else:
+            print(f"Method catalog reset to bundled data.")
+            print(f"  Methods: {info['method_count']}")
+            print(f"  Namespaces: {info['namespace_count']}")
+            print(f"  Path: {info['catalog_path']}")
 
 
 def cmd_info(as_json: bool = False) -> None:
@@ -325,12 +504,19 @@ def cmd_info(as_json: bool = False) -> None:
 
     catalog = load_catalog()
     namespaces = set(m["namespace"] for m in catalog)
+    meta = _read_meta()
+    updated_at = meta.get("updated_at_human", "unknown")
+    updated_ts = meta.get("updated_at", 0)
+    age_days = int((time.time() - updated_ts) / 86400) if updated_ts else None
+
     info = {
         "method_count": len(catalog),
         "namespace_count": len(namespaces),
         "catalog_path": str(CATALOG_FILE),
         "bundled_path": str(BUNDLED_CATALOG),
         "bundled_exists": BUNDLED_CATALOG.exists(),
+        "last_updated": updated_at,
+        "age_days": age_days,
     }
     if as_json:
         print(json.dumps(info, indent=2))
@@ -339,3 +525,7 @@ def cmd_info(as_json: bool = False) -> None:
         print(f"  Methods: {info['method_count']}")
         print(f"  Namespaces: {info['namespace_count']}")
         print(f"  Cache: {info['catalog_path']}")
+        print(f"  Last updated: {updated_at}")
+        if age_days is not None:
+            stale = " (STALE -- run 'slack-cli methods update')" if age_days > CATALOG_TTL_DAYS else ""
+            print(f"  Age: {age_days} days{stale}")
