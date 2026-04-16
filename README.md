@@ -711,34 +711,31 @@ slack-cli docs conversations.open --fresh
 
 ## Building Your Own Skills
 
-Skills are Markdown files with YAML frontmatter. Create `~/.claude/skills/my-slack-skill.md`:
+Skills are Markdown files with YAML frontmatter. Create `~/.claude/skills/my-slack-skill.md` with this structure:
 
-```markdown
----
-name: my-slack-skill
-description: "What this skill does"
-command_name: slack-cli
-tags: [slack, custom]
----
+**Required frontmatter:**
 
-# /my-slack-skill -- What It Does
+    ---
+    name: my-slack-skill
+    description: "What this skill does"
+    command_name: slack-cli
+    tags: [slack, custom]
+    ---
 
-Brief description.
+**Skill body:** A `## Procedure` section with step-by-step instructions and real command examples, followed by a `## Tips` section with gotchas and edge cases. Keep each skill focused on a single task area.
 
-## Procedure
-
-### Step 1: Do the thing
+**Example procedure step:**
 
 ```bash
-slack-cli conversations list --json
+# Step 1: Find channels matching a pattern
+slack-cli conversations list --json | python3 -c "
+import json, sys
+for ch in json.load(sys.stdin).get('channels', []):
+    if 'ops' in ch['name']:
+        print(f'{ch[\"id\"]} {ch[\"name\"]}')"
 ```
 
-## Tips
-
-- One tip here.
-```
-
-Keep skills focused on a single task area. The best skills follow the same pattern as the bundled ones: a clear procedure section with real command examples, a tips section with gotchas, and frontmatter tags that help Claude match the skill to user intent.
+The best skills follow the same pattern as the bundled ones: a clear procedure section with real command examples, a tips section with gotchas, and frontmatter tags that help Claude match the skill to user intent. Look at any of the 28 bundled skills in `slack_cli/skills_data/` for reference.
 
 ---
 
