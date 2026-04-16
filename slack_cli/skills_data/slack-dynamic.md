@@ -1,8 +1,8 @@
 ---
 name: slack-dynamic
-description: "The meta-skill: dynamically discover and call ANY of ~250 Slack API methods via the method catalog + raw API passthrough. Use when no other skill covers the task."
+description: "The meta-skill: dynamically discover and call ANY of ~306 Slack API methods via the method catalog + raw API passthrough. Use when no other skill covers the task."
 command_name: slack-cli
-tags: [dynamic, discovery, methods, catalog, api, passthrough, meta, library-card]
+tags: [dynamic, discovery, methods, catalog, api, passthrough, meta, library-card, source-reading]
 ---
 <!-- installed by slack-cli -->
 
@@ -10,7 +10,98 @@ tags: [dynamic, discovery, methods, catalog, api, passthrough, meta, library-car
 
 **This is the most important slack-cli skill.** It teaches you how to handle ANY Slack API request, even when no dedicated CLI command or pre-built skill exists. Think of it as the library card for the entire Slack API.
 
-The pattern is always the same three steps:
+## Self-Service Resolution Chain
+
+Before calling a method or asking for help, exhaust this chain in order:
+
+```
+1. Try a dedicated command  →  slack-cli COMMAND --help
+2. Read the method docs     →  slack-cli docs METHOD.NAME
+3. Search the catalog       →  slack-cli methods search KEYWORD
+4. Read the CLI source      →  ~/GitHub/slack-toolkit/slack_cli/
+5. Call via passthrough     →  slack-cli api METHOD --params '{...}'
+6. Escalate to human        →  share exact error + what you tried
+```
+
+### When to use dedicated commands vs passthrough
+
+**Use dedicated commands first.** Commands like `slack-cli chat post`, `slack-cli conversations list`, and `slack-cli users info` handle pagination, formatting, and edge cases for you. They are easier and more reliable.
+
+**Use the passthrough (`slack-cli api`) only when:**
+- No dedicated command exists for your use case
+- You need precise control over API params not exposed by the command
+- You are exploring an undocumented or new API method
+
+```bash
+# Check what dedicated commands exist
+slack-cli --help
+slack-cli conversations --help
+slack-cli chat --help
+slack-cli users --help
+slack-cli files --help
+```
+
+### How to discover what the CLI can do
+
+```bash
+# Top-level command list
+slack-cli --help
+
+# Subcommands for a namespace
+slack-cli conversations --help
+slack-cli chat --help
+slack-cli files --help
+slack-cli reactions --help
+slack-cli pins --help
+slack-cli users --help
+
+# Get live Slack API docs for a method
+slack-cli docs chat.postMessage
+
+# Find the right Slack API method
+slack-cli methods search KEYWORD
+slack-cli methods namespaces
+slack-cli methods list --namespace admin
+```
+
+### Source Reading (opensrc pattern)
+
+**The CLI source is at `~/GitHub/slack-toolkit/slack_cli/`.** When you need to understand how a command works internally, read the source file directly. This is faster and more accurate than guessing.
+
+```bash
+# What does conversations history actually do?
+# Read: ~/GitHub/slack-toolkit/slack_cli/conversations.py
+
+# How does config/token management work?
+# Read: ~/GitHub/slack-toolkit/slack_cli/config.py
+
+# What flags does chat post support?
+# Read: ~/GitHub/slack-toolkit/slack_cli/chat.py
+
+# How does the raw API passthrough work?
+# Read: ~/GitHub/slack-toolkit/slack_cli/api.py
+```
+
+Key source files by area:
+
+| Area | Source file |
+|------|------------|
+| CLI entry point, all routing | `cli.py` |
+| Post/update/delete/schedule messages | `chat.py` |
+| Channels: list/history/join/create | `conversations.py` |
+| User lookup, profile, presence | `users.py` |
+| File upload and listing | `files.py` |
+| Reactions add/remove/get | `reactions.py` |
+| Slack Canvas CRUD | `canvas.py` |
+| Token management, profiles | `config.py` |
+| Method catalog search and lookup | `methods.py` |
+| Raw API passthrough | `api.py` |
+
+---
+
+## The Dynamic Three Steps
+
+The pattern for calling any method not covered by a dedicated command:
 
 1. **Search** the method catalog to find the right API method
 2. **Read** the method details to understand params, scopes, and token type

@@ -13,19 +13,19 @@ import pytest
 # ---- version ----
 
 def test_version():
-    """slack-cli --version returns 0.2.0."""
+    """slack-cli --version returns 0.2.2."""
     from slack_cli import __version__
-    assert __version__ == "0.2.0"
+    assert __version__ == "0.2.2"
 
 
 def test_version_cli():
-    """CLI --version flag outputs 0.2.0."""
+    """CLI --version flag outputs 0.2.2."""
     result = subprocess.run(
         [sys.executable, "-m", "slack_cli.cli", "--version"],
         capture_output=True,
         text=True,
     )
-    assert "0.2.0" in result.stdout + result.stderr
+    assert "0.2.2" in result.stdout + result.stderr
     assert result.returncode == 0
 
 
@@ -243,10 +243,10 @@ def test_config_show_no_crash():
 # ---- skills ----
 
 def test_skills_count():
-    """Exactly 28 skill files exist in skills_data."""
+    """Exactly 33 skill files exist in skills_data."""
     skills_dir = Path(__file__).parent.parent / "slack_cli" / "skills_data"
     skill_files = list(skills_dir.glob("*.md"))
-    assert len(skill_files) == 28, f"Expected 28 skills, found {len(skill_files)}: {[f.name for f in skill_files]}"
+    assert len(skill_files) == 33, f"Expected 33 skills, found {len(skill_files)}: {[f.name for f in skill_files]}"
 
 
 def test_skills_have_frontmatter():
