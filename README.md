@@ -11,9 +11,9 @@ Built for AI agents, automation scripts, and developers who need a scriptable Sl
 **1. Install**
 
 ```bash
-uv tool install slack-toolkit
-# or
 pip install slack-toolkit
+# or with uv (recommended for isolated install)
+uv tool install slack-toolkit
 ```
 
 **2. Create a Slack app and generate tokens**
@@ -45,6 +45,20 @@ slack-cli api auth.test
 ```bash
 slack-cli chat post C0YOURCHANNEL "Hello from slack-cli"
 ```
+
+---
+
+## Why Not Just Use the Slack MCP?
+
+The `@modelcontextprotocol/server-slack` MCP works for basic operations. But it has three limitations:
+
+1. **Identity.** The MCP server posts as whatever OAuth identity it's configured with. If your Claude session has a remote Slack MCP connection, messages go out as your personal account, not as a named bot. `slack-cli` always uses your bot token, so every message is from your app.
+
+2. **Coverage.** The Slack MCP exposes ~15 tools. The Slack API has 306 methods. `slack-cli` ships the full catalog and a raw passthrough, so nothing is out of reach.
+
+3. **Distribution.** MCP servers require a running process and per-client config on every machine. `slack-cli` is a single binary. Install once, set a token, done.
+
+If the MCP covers your needs and identity doesn't matter, keep using it. If you need a specific bot identity, full API access, or fleet-wide deployment, `slack-cli` is the tool.
 
 ---
 

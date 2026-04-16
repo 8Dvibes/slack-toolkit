@@ -1,5 +1,8 @@
 .venv/
 __pycache__/
+*.pyc
 *.egg-info/
 dist/
 build/
+.pytest_cache/
+.slack-cli.json
