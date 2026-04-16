@@ -1,22 +1,39 @@
 [build-system]
-requires = ["setuptools>=68.0"]
+requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "slack-toolkit"
-version = "0.2.0"
-description = "Zero-dependency CLI for the Slack Web API with 28 Claude Code skills"
-license = "MIT"
+version = "0.2.1"
+description = "Zero-dependency CLI for the Slack Web API. 306 methods, 28 Claude Code skills, raw API passthrough. Built for AI agents."
+readme = "README.md"
+license = {text = "MIT"}
 requires-python = ">=3.9"
 authors = [{ name = "AI Build Lab", email = "tyler@aibuildlab.com" }]
-keywords = ["slack", "cli", "api", "claude-code", "skills"]
+keywords = ["slack", "cli", "api", "claude-code", "ai-agents", "slack-api", "zero-dependencies"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Environment :: Console",
     "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Communications :: Chat",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration",
 ]
+
+[project.urls]
+Homepage = "https://github.com/8Dvibes/slack-toolkit"
+Repository = "https://github.com/8Dvibes/slack-toolkit"
+Issues = "https://github.com/8Dvibes/slack-toolkit/issues"
+Changelog = "https://github.com/8Dvibes/slack-toolkit/blob/main/CHANGELOG.md"
 
 [project.scripts]
 slack-cli = "slack_cli.cli:main"
