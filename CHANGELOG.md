@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.2.2] - 2026-04-16
+
+### Added
+
+- 5 expert skills for dynamic agent usage (Layer 2):
+  - `slack-api-expert`: master guide with self-service resolution chain, token types, pagination, rate limits, opensrc-style source reading
+  - `slack-block-kit`: rich message building with 5 ready-to-use Block Kit templates
+  - `slack-integration-patterns`: 6 architectural patterns for agent-to-Slack workflows
+  - `slack-mrkdwn`: complete Slack markup syntax reference with markdown comparison
+  - `slack-troubleshooting`: self-diagnosis guide for 15 common API errors
+- Enhanced `slack-dynamic` skill with full resolution chain and source reading patterns
+
+### Changed
+
+- Total bundled skills: 28 → 33
+- README updated with expert skills in catalog table
+- Blueprint updated to reflect v0.2.2
+
 ## [0.2.0] - 2026-04-15
 
 ### Added

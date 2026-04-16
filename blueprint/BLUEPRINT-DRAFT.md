@@ -1,15 +1,15 @@
 # Blueprint: slack-toolkit -- Zero-Dependency Slack CLI for AI Agents
 
 **Status:** Draft (not published)
-**Version:** 0.2.0
-**Date:** 2026-04-15
+**Version:** 0.2.2
+**Date:** 2026-04-16
 **Repo:** github.com/8Dvibes/slack-toolkit
 
 ---
 
 ## What Was Built
 
-`slack-toolkit` is a zero-dependency Python CLI for the Slack Web API. It ships with a 306-method catalog, 28 Claude Code skills, and a raw API passthrough that lets any AI agent call the full Slack surface without managing OAuth flows, without installing external packages, and without wiring up an MCP server.
+`slack-toolkit` is a zero-dependency Python CLI for the Slack Web API. It ships with a 306-method catalog, 33 Claude Code skills, and a raw API passthrough that lets any AI agent call the full Slack surface without managing OAuth flows, without installing external packages, and without wiring up an MCP server.
 
 Install it once and every agent on every machine can post to Slack, search channels, manage users, create canvases, set reminders, and do anything else the Slack Web API supports -- all from a single scriptable binary.
 
@@ -104,7 +104,7 @@ slack-cli --profile staging chat post C0CHANNEL "staging test"
 
 ## The Skill System
 
-The 28 bundled Claude Code skills are the fastest way to put slack-toolkit to work with AI agents.
+The 33 bundled Claude Code skills are the fastest way to put slack-toolkit to work with AI agents.
 
 ### Install the skills
 
@@ -112,7 +112,7 @@ The 28 bundled Claude Code skills are the fastest way to put slack-toolkit to wo
 slack-cli skills install
 ```
 
-This copies 28 SKILL.md files to `~/.claude/skills/`. Each skill teaches Claude Code how to handle a specific category of Slack task.
+This copies 33 SKILL.md files to `~/.claude/skills/`. Each skill teaches Claude Code how to handle a specific category of Slack task.
 
 ### Invoke from Claude Code
 
@@ -123,7 +123,11 @@ This copies 28 SKILL.md files to `~/.claude/skills/`. Each skill teaches Claude 
 /slack-user-lookup jane@example.com
 ```
 
-### The 28 skills at a glance
+### The 33 skills at a glance
+
+Skills are organized into two layers: **Layer 1** (operational skills -- what to do) and **Layer 2** (expert skills -- how to do it right).
+
+#### Layer 1: Operational Skills (28)
 
 | Skill | What it handles |
 |-------|----------------|
@@ -155,6 +159,18 @@ This copies 28 SKILL.md files to `~/.claude/skills/`. Each skill teaches Claude 
 | `/slack-admin` | Admin operations via passthrough |
 | `/slack-calls` | Voice/video call registration |
 | `/slack-bookmarks` | Channel bookmark management |
+
+#### Layer 2: Expert Skills (5)
+
+These skills teach agents the underlying mechanics of the Slack API -- not just what commands to run, but how to debug failures, choose the right token type, build rich messages correctly, and resolve problems without human escalation.
+
+| Skill | What it handles |
+|-------|----------------|
+| `/slack-api-expert` | Master guide: token types, pagination, rate limits, self-service resolution chain, source reading |
+| `/slack-block-kit` | Build rich messages with Block Kit: all block types, 5 ready-to-use templates, shell quoting patterns |
+| `/slack-integration-patterns` | 6 architectural patterns: notification pipeline, approval flow, report posting, channel provisioning |
+| `/slack-mrkdwn` | Complete Slack markup syntax reference with markdown comparison, mentions, date formatting, escaping |
+| `/slack-troubleshooting` | Self-diagnosis guide for 15 common API errors: scope issues, token debugging, escalation chain |
 
 ### Building your own skills
 
@@ -239,7 +255,7 @@ This is the same pattern that makes n8n-cli useful: a structured, locally-querya
 
 ### Skill bundling inside the wheel
 
-Skills ship as `package-data` inside the Python wheel. When you `pip install slack-toolkit`, the 28 SKILL.md files come along. `slack-cli skills install` copies them to `~/.claude/skills/`. One install, one skills-install, you are done.
+Skills ship as `package-data` inside the Python wheel. When you `pip install slack-toolkit`, the 33 SKILL.md files come along. `slack-cli skills install` copies them to `~/.claude/skills/`. One install, one skills-install, you are done.
 
 The alternative -- hosting skills separately or requiring a manual download -- adds friction that kills adoption. Community members should be able to go from zero to working skills in two commands.
 
@@ -271,10 +287,11 @@ In practice they compose well: n8n handles your workflow logic, and when that wo
 Ideas for future versions -- none of these are committed yet:
 
 - `slack-cli skills doctor` -- validate that every command referenced in every installed skill actually exists in the current CLI surface (same pattern as n8n-cli)
-- Block Kit builder command -- interactive or template-driven Block Kit JSON generation
 - Webhook support -- inbound webhook receiver for quick testing
 - Expanded admin coverage -- more admin.* namespace commands with dedicated commands (not just passthrough)
 - Export formats -- CSV and JSON export flags on more list commands
+
+**Done in v0.2.2:** Block Kit builder coverage is now handled by the `/slack-block-kit` expert skill, which ships 5 ready-to-use templates and covers all block types. No CLI command needed -- the skill gives agents everything required to compose Block Kit JSON correctly.
 
 ---
 

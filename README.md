@@ -1,6 +1,6 @@
 # slack-toolkit
 
-Zero-dependency CLI for the Slack Web API. 306 API methods in the catalog, 28 Claude Code skills bundled, no external packages required.
+Zero-dependency CLI for the Slack Web API. 306 API methods in the catalog, 33 Claude Code skills bundled, no external packages required.
 
 Built for AI agents, automation scripts, and developers who need a scriptable Slack client without managing OAuth flows in a browser or wiring up MCP servers.
 
@@ -87,7 +87,7 @@ slack-cli docs chat.postMessage --fresh  # bypass cache
 
 Docs are cached in `~/.slack-cli/docs/` with a 30-day TTL.
 
-### 28 Claude Code Skills
+### 33 Claude Code Skills
 
 Skills are structured prompt files that teach Claude Code how to use slack-cli for common tasks. Install them all in one command:
 
@@ -591,7 +591,7 @@ slack-cli api emoji.list --json
 Manage the bundled Claude Code skills.
 
 ```bash
-# Install all 28 skills to ~/.claude/skills/
+# Install all 33 skills to ~/.claude/skills/
 slack-cli skills install
 
 # Force-overwrite even non-slack-cli skills
@@ -609,7 +609,7 @@ slack-cli skills doctor
 
 ## Skills Catalog
 
-28 Claude Code skills ship with slack-toolkit. Install them with `slack-cli skills install` and invoke from any Claude Code session.
+33 Claude Code skills ship with slack-toolkit. Install them with `slack-cli skills install` and invoke from any Claude Code session.
 
 | Skill | Command | Description |
 |-------|---------|-------------|
@@ -641,6 +641,11 @@ slack-cli skills doctor
 | `slack-admin` | `/slack-admin` | Admin operations via API passthrough: users, channels, apps, workspace settings |
 | `slack-calls` | `/slack-calls` | Register and manage voice/video calls in Slack's call UI |
 | `slack-bookmarks` | `/slack-bookmarks` | Add, edit, list, and remove channel bookmarks |
+| `slack-api-expert` | `/slack-api-expert` | Master guide: token types, pagination, rate limits, self-service resolution chain, source reading |
+| `slack-block-kit` | `/slack-block-kit` | Build rich messages with Block Kit: all block types, 5 templates, shell quoting patterns |
+| `slack-integration-patterns` | `/slack-integration-patterns` | 6 architectural patterns: notification pipeline, approval flow, report posting, channel provisioning |
+| `slack-mrkdwn` | `/slack-mrkdwn` | Slack markup syntax reference: formatting, mentions, date formatting, escaping |
+| `slack-troubleshooting` | `/slack-troubleshooting` | Self-diagnosis for 15 common errors: scope issues, token debugging, escalation chain |
 
 ---
 
@@ -735,7 +740,7 @@ for ch in json.load(sys.stdin).get('channels', []):
         print(f'{ch[\"id\"]} {ch[\"name\"]}')"
 ```
 
-The best skills follow the same pattern as the bundled ones: a clear procedure section with real command examples, a tips section with gotchas, and frontmatter tags that help Claude match the skill to user intent. Look at any of the 28 bundled skills in `slack_cli/skills_data/` for reference.
+The best skills follow the same pattern as the bundled ones: a clear procedure section with real command examples, a tips section with gotchas, and frontmatter tags that help Claude match the skill to user intent. Look at any of the 33 bundled skills in `slack_cli/skills_data/` for reference.
 
 ---
 
@@ -763,7 +768,7 @@ slack_cli/
   reminders.py     -- Reminder management
   dnd.py           -- Do Not Disturb
   catalog_data/    -- Bundled methods.json (306 methods)
-  skills_data/     -- 28 bundled SKILL.md files
+  skills_data/     -- 33 bundled SKILL.md files
 ```
 
 **Key design decisions:**
