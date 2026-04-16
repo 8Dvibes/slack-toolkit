@@ -1,6 +1,6 @@
 ---
 name: slack-reactions
-description: "Manage emoji reactions: add/remove reactions, audit reaction patterns, run poll-style voting with emoji reactions on messages."
+description: "Add, remove, and audit emoji reactions on Slack messages. Build lightweight polls with reaction-based voting. NOT for listing custom emoji (/slack-emoji). Use when reacting to a message or running a reaction poll."
 command_name: slack-cli
 tags: [reactions, emoji, polls, voting, engagement]
 ---

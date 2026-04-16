@@ -1,6 +1,6 @@
 ---
 name: slack-calls
-description: "Register and manage voice/video calls in Slack via slack-cli api passthrough. Integrates external call systems with Slack's call UI."
+description: "Register external voice/video calls (Zoom, Meet) in Slack's native call UI. Add, end, update, and query calls via API passthrough. Use when integrating an external call system with Slack."
 command_name: slack-cli
 tags: [slack, calls, video, voice, zoom, meet]
 ---

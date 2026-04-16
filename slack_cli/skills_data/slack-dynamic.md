@@ -1,6 +1,6 @@
 ---
 name: slack-dynamic
-description: "The meta-skill: dynamically discover and call ANY of ~306 Slack API methods via the method catalog + raw API passthrough. Use when no other skill covers the task."
+description: "Call any of 306 Slack API methods via catalog search + raw passthrough. NOT best practices (/slack-api-expert), NOT errors (/slack-troubleshooting). Use when no dedicated skill covers the method you need."
 command_name: slack-cli
 tags: [dynamic, discovery, methods, catalog, api, passthrough, meta, library-card, source-reading]
 ---

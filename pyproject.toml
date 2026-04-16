@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "slack-toolkit"
-version = "0.2.2"
+version = "0.2.3"
 description = "Zero-dependency CLI for the Slack Web API. 306 methods, 33 Claude Code skills, raw API passthrough. Built for AI agents."
 readme = "README.md"
 license = {text = "MIT"}

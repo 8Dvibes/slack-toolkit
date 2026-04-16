@@ -1,6 +1,6 @@
 ---
 name: slack-mrkdwn
-description: "Slack's mrkdwn markup syntax reference for agents. Covers bold/italic/code/links/mentions/emoji/lists/blockquotes/date formatting, differences from standard Markdown, escaping, and common patterns for agent-generated messages."
+description: "Reference for Slack mrkdwn syntax (NOT standard Markdown). Covers bold, italic, code, links, mentions, emoji, lists, blockquotes, date formatting, and escaping rules. Use when formatting message text for Slack."
 command_name: slack-cli
 tags: [slack, mrkdwn, markdown, formatting, text, mentions, emoji, links, dates, syntax]
 ---

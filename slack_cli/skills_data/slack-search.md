@@ -1,6 +1,6 @@
 ---
 name: slack-search
-description: "Search messages and files across the Slack workspace. Covers search operators, sorting, and pagination. Requires a user token (xoxp-). Use when finding messages, files, or conversation history by keyword."
+description: "Search Slack messages and files by keyword. Supports search operators, sorting, pagination. Requires xoxp- user token. Use when finding past messages, locating files, or querying conversation history."
 command_name: slack-cli
 tags: [slack, search, messages, files, query]
 ---

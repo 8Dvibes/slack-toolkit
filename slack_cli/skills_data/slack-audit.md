@@ -1,6 +1,6 @@
 ---
 name: slack-audit
-description: "Workspace audit: find stale channels, missing topics/purposes, membership gaps, and permission issues. Read-only analysis with actionable recommendations."
+description: "Audit Slack workspace hygiene. Finds stale channels, missing topics, membership gaps, and permission issues. Read-only analysis only. NOT for bulk fixes (/slack-bulk-ops). Use when reviewing workspace health."
 command_name: slack-cli
 tags: [audit, hygiene, channels, compliance, stale, topics, members]
 ---

@@ -1,6 +1,6 @@
 ---
 name: slack-block-kit
-description: "Build rich Slack messages with Block Kit. Covers block types, text objects, how to pass blocks via slack-cli, 5 ready-to-use templates, and common gotchas. Use when you need to post structured, visually formatted Slack messages."
+description: "Build Block Kit JSON for rich Slack messages. Block types, text objects, templates, --blocks flag. NOT for plain text (/slack-post). Use when the message needs headers, sections, dividers, or other structured layouts."
 command_name: slack-cli
 tags: [slack, block-kit, blocks, rich-messages, formatting, templates, layouts, chat]
 ---

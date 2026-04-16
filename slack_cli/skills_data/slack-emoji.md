@@ -1,6 +1,6 @@
 ---
 name: slack-emoji
-description: "List and search custom emoji in the workspace. Uses the raw API passthrough since there is no dedicated emoji command. Demonstrates the method catalog + api passthrough pattern."
+description: "List and search custom emoji in the Slack workspace. Uses raw API passthrough (emoji.list). NOT for reactions on messages (/slack-reactions). Use when browsing or finding custom emoji by name."
 command_name: slack-cli
 tags: [emoji, custom, api, passthrough, methods]
 ---

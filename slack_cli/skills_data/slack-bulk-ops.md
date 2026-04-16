@@ -1,6 +1,6 @@
 ---
 name: slack-bulk-ops
-description: "Bulk Slack operations: invite multiple users to channels, bulk archive stale channels, bulk set topics. Always shows a dry-run plan before executing."
+description: "Run bulk Slack operations with mandatory dry-run first. Bulk invite, archive, set topics, kick, clone members. NOT for read-only audits (/slack-audit). Use when making batch changes across multiple channels or users."
 command_name: slack-cli
 tags: [bulk, invite, archive, topic, batch, operations]
 ---

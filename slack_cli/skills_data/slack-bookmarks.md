@@ -1,6 +1,6 @@
 ---
 name: slack-bookmarks
-description: "Manage Slack channel bookmarks: add, edit, list, and remove bookmark links pinned to channel headers."
+description: "Manage Slack channel bookmarks. Add, edit, list, and remove links pinned to channel headers. Use when adding quick-access links to a channel or auditing existing bookmarks."
 command_name: slack-cli
 tags: [slack, bookmarks, links, channels, pinned]
 ---

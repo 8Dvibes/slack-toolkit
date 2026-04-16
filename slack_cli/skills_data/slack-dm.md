@@ -1,6 +1,6 @@
 ---
 name: slack-dm
-description: "Create and manage Slack DMs and group DMs using slack-cli conversations open. Resolves emails to user IDs automatically."
+description: "Open DMs and group DMs in Slack. Resolves emails to user IDs, opens 1:1 or multi-party conversations. NOT for channel posts (/slack-post). Use when you need to send a direct message to one or more users."
 command_name: slack-cli
 tags: [slack, dm, direct-message, group-dm, conversations]
 ---

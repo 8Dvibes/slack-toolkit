@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.3] - 2026-04-16
+
+### Changed
+
+- Rewrote all 33 skill descriptions for better model selection:
+  - Descriptions stay under 230 chars (avoids 252-char truncation in model context windows)
+  - Front-loaded trigger phrases for more accurate skill matching
+  - Added NOT-clauses to disambiguate overlapping skills (post/schedule, post/block-kit, post/thread, api-expert/dynamic/troubleshooting)
+  - CoD-inspired density: informative but concise
+
 ## [0.2.2] - 2026-04-16
 
 ### Added

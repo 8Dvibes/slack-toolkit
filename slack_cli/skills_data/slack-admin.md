@@ -1,6 +1,6 @@
 ---
 name: slack-admin
-description: "Admin operations via slack-cli api passthrough: manage users, channels, apps, and workspace settings. Requires admin-level token."
+description: "Run Slack admin API operations. Manage users, channels, apps, and workspace settings via passthrough. Requires admin-level xoxp- token. Use when performing workspace administration tasks."
 command_name: slack-cli
 tags: [slack, admin, workspace, enterprise, users, channels]
 ---

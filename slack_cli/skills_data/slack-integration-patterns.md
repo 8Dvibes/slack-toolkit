@@ -1,6 +1,6 @@
 ---
 name: slack-integration-patterns
-description: "Common agent-to-Slack architectural patterns with complete command sequences. Covers notification pipelines, approval flows, report posting, channel provisioning, monitoring loops, and cross-channel coordination. Use when designing how an agent or automation should interact with Slack."
+description: "Design agent-to-Slack architectures. Six patterns: notifications, approvals, reports, provisioning, monitoring, cross-channel. Use when planning how an automation or agent should interact with Slack."
 command_name: slack-cli
 tags: [slack, patterns, architecture, integration, automation, workflows, agents, pipelines]
 ---

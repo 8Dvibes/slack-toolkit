@@ -1,6 +1,6 @@
 ---
 name: slack-lists
-description: "Slack Lists CRUD operations via slack-cli api passthrough. Create, update, and manage list items in Slack's native list feature."
+description: "Manage Slack Lists (native task/kanban feature). CRUD operations on lists and items via API passthrough. Use when creating, updating, or querying Slack Lists."
 command_name: slack-cli
 tags: [slack, lists, items, tasks, kanban, crud]
 ---

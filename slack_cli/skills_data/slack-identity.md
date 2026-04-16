@@ -1,6 +1,6 @@
 ---
 name: slack-identity
-description: "Verify posting identity, check active token, audit scopes. Guardrails: always post as the configured bot, never impersonate users."
+description: "Verify who you are posting as in Slack. Checks active token, audits OAuth scopes, enforces bot-only posting guardrails. Use before bulk operations or when unsure which identity is active."
 command_name: slack-cli
 tags: [slack, identity, token, scopes, audit, security]
 ---

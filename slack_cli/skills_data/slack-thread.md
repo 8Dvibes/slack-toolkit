@@ -1,6 +1,6 @@
 ---
 name: slack-thread
-description: "Read and reply to Slack threads with full context. Get thread parent + all replies, post threaded replies, follow up on conversations."
+description: "Read and reply to Slack threads. Fetches parent + all replies, posts threaded responses. NOT for top-level channel posts (/slack-post). Use when you need thread context or must reply inside an existing thread."
 command_name: slack-cli
 tags: [slack, thread, conversation, reply]
 ---

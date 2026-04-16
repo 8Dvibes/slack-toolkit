@@ -1,6 +1,6 @@
 ---
 name: slack-status
-description: "Workspace health check: test connection, show bot info, list channels bot is in, show token scopes. Use when checking Slack connectivity, verifying bot setup, or getting an overview of the workspace."
+description: "Check Slack workspace health. Tests auth, shows bot identity, lists joined channels, audits token scopes. Use when verifying connectivity, confirming bot setup, or diagnosing workspace access."
 command_name: slack-cli
 tags: [slack, status, health, workspace, diagnostics]
 ---

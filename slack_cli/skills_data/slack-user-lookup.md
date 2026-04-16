@@ -1,6 +1,6 @@
 ---
 name: slack-user-lookup
-description: "Look up Slack users by email, ID, or name. Show profile details, presence status, and recent activity. Use when identifying users, checking availability, or building user context."
+description: "Look up Slack users by email, ID, or name. Shows profile details, presence, and activity. Use when you need to resolve a user identity, check who someone is, or get a user ID from an email."
 command_name: slack-cli
 tags: [slack, users, lookup, profile, presence, email]
 ---

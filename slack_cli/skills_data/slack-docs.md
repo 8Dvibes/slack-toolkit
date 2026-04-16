@@ -1,6 +1,6 @@
 ---
 name: slack-docs
-description: "Real-time Slack API doc lookup and catalog refresh. Fetch method docs, check staleness, and update the local catalog from docs.slack.dev."
+description: "Look up Slack API method documentation from docs.slack.dev. Fetches parameter details, checks catalog staleness, refreshes local cache. Use when you need exact parameter specs for a Slack API method."
 command_name: slack-cli
 tags: [slack, docs, catalog, reference, api, methods]
 ---

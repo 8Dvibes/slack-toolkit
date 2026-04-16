@@ -1,6 +1,6 @@
 ---
 name: slack-channel-info
-description: "Deep dive on a Slack channel: info, members, recent messages, pins, bookmarks, topic, and purpose. Combines multiple commands for a full picture. Use when investigating a channel or building channel context."
+description: "Inspect a Slack channel in depth. Pulls info, members, messages, pins, bookmarks, topic, purpose. NOT for creating channels (/slack-channel-create). Use when investigating or building context on a channel."
 command_name: slack-cli
 tags: [slack, channel, info, members, pins, bookmarks, history]
 ---

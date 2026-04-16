@@ -1,6 +1,6 @@
 ---
 name: slack-post
-description: "Post messages with Block Kit support. Covers simple text, threaded replies, Block Kit formatting, and scheduled messages. Use when sending Slack messages, building rich layouts, or scheduling posts."
+description: "Post a message to a Slack channel now. Plain text or simple formatting. NOT Block Kit (/slack-block-kit), NOT scheduled (/slack-schedule), NOT DMs (/slack-dm). Use when you need to send a message immediately."
 command_name: slack-cli
 tags: [slack, post, message, blocks, schedule, chat]
 ---

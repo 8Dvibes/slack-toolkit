@@ -1,6 +1,6 @@
 ---
 name: slack-canvas
-description: "Create, edit, and manage Slack canvases. Covers creating standalone canvases, channel canvases, editing sections, and access control."
+description: "Create and manage Slack canvases. Standalone or channel-attached canvases, section editing, and access control. Use when building collaborative docs inside Slack."
 command_name: slack-cli
 tags: [slack, canvas, docs, collaboration, canvases]
 ---

@@ -1,6 +1,6 @@
 ---
 name: slack-dnd
-description: "Manage Slack Do Not Disturb settings: check DND status, enable/disable snooze, and check team DND status."
+description: "Manage Slack Do Not Disturb. Check DND status, enable/disable snooze, query team-wide DND. Use when checking if someone is in DND or toggling notification snooze."
 command_name: slack-cli
 tags: [slack, dnd, snooze, notifications, do-not-disturb]
 ---

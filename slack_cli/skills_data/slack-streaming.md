@@ -1,6 +1,6 @@
 ---
 name: slack-streaming
-description: "Stream AI-generated responses into Slack using chat.startStream, chat.appendStream, and chat.stopStream via slack-cli api passthrough."
+description: "Stream text into Slack in real time. Uses chat.startStream/appendStream/stopStream API via passthrough. Use when posting AI-generated responses that should appear progressively, not all at once."
 command_name: slack-cli
 tags: [slack, streaming, ai, chat, stream, realtime]
 ---

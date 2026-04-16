@@ -1,6 +1,6 @@
 ---
 name: slack-channel-create
-description: "Create Slack channels with full setup: name, public/private, topic, purpose, invite members, add bookmarks. One-shot channel provisioning."
+description: "Create and fully provision a Slack channel in one pass. Sets name, visibility, topic, purpose, members, and bookmarks. NOT for inspecting existing channels (/slack-channel-info). Use when spinning up a new channel."
 command_name: slack-cli
 tags: [slack, channel, create, setup, onboarding]
 ---

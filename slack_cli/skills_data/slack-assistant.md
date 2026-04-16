@@ -1,6 +1,6 @@
 ---
 name: slack-assistant
-description: "Manage Slack AI assistant threads: set status, suggested prompts, and titles. Used for building Slack AI assistant integrations."
+description: "Manage Slack AI assistant thread metadata. Set processing status, suggested prompts, and thread titles via assistant.threads API. Use when building or maintaining a Slack AI assistant integration."
 command_name: slack-cli
 tags: [slack, assistant, ai, threads, prompts]
 ---

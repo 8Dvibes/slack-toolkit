@@ -1,6 +1,6 @@
 ---
 name: slack-archive-export
-description: "Export Slack channel history to readable markdown. Fetch history with date ranges, resolve usernames, format as markdown with timestamps, handle pagination for long histories."
+description: "Export Slack channel history to markdown. Fetches messages with date ranges, resolves usernames, handles pagination. Use when archiving a channel, exporting a conversation log, or backing up history before archiving."
 command_name: slack-cli
 tags: [slack, archive, export, history, markdown]
 ---

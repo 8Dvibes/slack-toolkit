@@ -1,6 +1,6 @@
 ---
 name: slack-schedule
-description: "Schedule Slack messages for future delivery. Convert human-readable times to Unix timestamps, list pending scheduled messages, cancel scheduled messages."
+description: "Schedule a Slack message for future delivery. Converts human times to Unix timestamps, lists pending sends, cancels queued messages. NOT for posting now (/slack-post). Use when a message must arrive at a specific future time."
 command_name: slack-cli
 tags: [slack, schedule, message, timer, delay]
 ---

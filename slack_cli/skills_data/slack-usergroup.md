@@ -1,6 +1,6 @@
 ---
 name: slack-usergroup
-description: "Manage Slack user groups: create, list, update, enable/disable, and manage members. Use @handle mentions to address groups in messages."
+description: "Manage Slack user groups (@handles). Create, list, update, enable/disable groups and their members. Use when setting up team @mentions or managing group membership."
 command_name: slack-cli
 tags: [slack, usergroup, team, group, members, @mention]
 ---

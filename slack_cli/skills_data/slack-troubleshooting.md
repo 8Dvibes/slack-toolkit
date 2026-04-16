@@ -1,6 +1,6 @@
 ---
 name: slack-troubleshooting
-description: "Self-diagnostic guide for Slack API and slack-cli errors. Covers all common error codes, token type confusion, scope auditing, and the full self-service debugging chain. Use when a slack-cli command fails or returns an unexpected result."
+description: "Fix slack-cli errors and Slack API failures. Error code lookup, scope auditing, token debugging, diagnostic chain. NOT for learning slack-cli (/slack-api-expert). Use when a command fails or returns unexpected results."
 command_name: slack-cli
 tags: [slack, troubleshooting, errors, debugging, tokens, scopes, auth, diagnose]
 ---

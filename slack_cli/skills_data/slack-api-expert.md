@@ -1,6 +1,6 @@
 ---
 name: slack-api-expert
-description: "Master guide for using slack-cli effectively. Covers the self-service resolution chain, bot vs user token decisions, pagination, rate limits, error handling, and source reading. Use this as the starting point for any slack-cli task you haven't done before."
+description: "Learn slack-cli best practices. Token selection, pagination, rate limits, resolution chain. NOT errors (/slack-troubleshooting), NOT raw API (/slack-dynamic). Use when starting a new slack-cli task."
 command_name: slack-cli
 tags: [slack, api, expert, tokens, pagination, rate-limits, errors, source, meta, guide]
 ---

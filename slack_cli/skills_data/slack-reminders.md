@@ -1,6 +1,6 @@
 ---
 name: slack-reminders
-description: "Create, list, complete, and delete Slack reminders for any user. Set time-based reminders with natural language or Unix timestamps."
+description: "Create and manage Slack reminders. Add, list, complete, and delete reminders for any user with natural language or Unix timestamps. NOT scheduled messages (/slack-schedule). Use when setting a Slack reminder."
 command_name: slack-cli
 tags: [slack, reminders, time, schedule, tasks]
 ---

@@ -1,6 +1,6 @@
 ---
 name: slack-file-upload
-description: "Upload files to Slack channels using the V2 two-step flow. Covers file types, sharing to channels/threads, titles, initial comments, and file management."
+description: "Upload files to Slack channels and threads. Uses the V2 two-step upload flow, supports all file types, titles, and comments. Use when sharing a file, attaching a report, or uploading build artifacts to Slack."
 command_name: slack-cli
 tags: [slack, file, upload, share, attachment]
 ---
