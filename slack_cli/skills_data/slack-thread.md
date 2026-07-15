@@ -48,6 +48,14 @@ slack-cli conversations replies <CHANNEL_ID> <THREAD_TS> --json
 
 The JSON output includes `user`, `text`, `ts`, `blocks`, reactions, and attachments for each message.
 
+When a message's `files` array contains an image or document that must be read, download it by file ID before continuing:
+
+```bash
+slack-cli files download <FILE_ID> --output /tmp/slack-attachment
+```
+
+Do not fetch `url_private` anonymously. `files download` resolves the preferred private URL and sends the bot bearer token without printing it. The bot needs `files:read`.
+
 For long threads, increase the limit:
 
 ```bash

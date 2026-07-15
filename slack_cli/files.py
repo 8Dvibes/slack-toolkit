@@ -9,7 +9,7 @@ import os
 import sys
 from typing import Optional
 
-from .client import SlackClient
+from .client import SlackApiError, SlackClient
 
 
 def upload_file(
@@ -153,6 +153,49 @@ def get_file_info(
     channels = f.get("channels", [])
     if channels:
         print(f"Channels:  {', '.join(channels)}")
+
+
+def download_file(
+    client: SlackClient,
+    file_id: str,
+    output: Optional[str] = None,
+) -> None:
+    """Download a private Slack file to a local path."""
+    try:
+        resp = client.call("files.info", params={"file": file_id})
+    except SlackApiError as e:
+        if e.error == "file_not_found":
+            raise SlackApiError(
+                f"file_not_found: {file_id}", status=e.status, body=e.body
+            ) from e
+        if e.error == "missing_scope":
+            raise SlackApiError(
+                "missing_scope: files:read is required to download files",
+                status=e.status,
+                body=e.body,
+            ) from e
+        raise
+
+    file_data = resp.get("file", {})
+    if not isinstance(file_data, dict) or not file_data:
+        raise SlackApiError(f"file_not_found: {file_id}")
+
+    download_url = file_data.get("url_private_download") or file_data.get("url_private")
+    if not isinstance(download_url, str) or not download_url:
+        raise SlackApiError(
+            "download_url_not_available: Slack did not return a private file URL"
+        )
+
+    filename = file_data.get("name") or file_id
+    if not isinstance(filename, str):
+        filename = file_id
+    default_output = os.path.basename(filename)
+    if not default_output or default_output in (".", ".."):
+        default_output = file_id
+    output_path = output if output is not None else default_output
+
+    total_bytes = client.download_request(download_url, output_path)
+    print(f"Downloaded: {output_path} ({total_bytes} bytes)")
 
 
 def delete_file(

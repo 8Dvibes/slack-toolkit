@@ -13,19 +13,19 @@ import pytest
 # ---- version ----
 
 def test_version():
-    """slack-cli --version returns 0.3.0."""
+    """slack-cli --version returns 0.3.1."""
     from slack_cli import __version__
-    assert __version__ == "0.3.0"
+    assert __version__ == "0.3.1"
 
 
 def test_version_cli():
-    """CLI --version flag outputs 0.3.0."""
+    """CLI --version flag outputs 0.3.1."""
     result = subprocess.run(
         [sys.executable, "-m", "slack_cli.cli", "--version"],
         capture_output=True,
         text=True,
     )
-    assert "0.3.0" in result.stdout + result.stderr
+    assert "0.3.1" in result.stdout + result.stderr
     assert result.returncode == 0
 
 

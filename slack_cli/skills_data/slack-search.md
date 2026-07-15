@@ -155,7 +155,16 @@ For file results, key fields:
 - `files.matches[].filetype` -- file extension
 - `files.matches[].user` -- uploader user ID
 - `files.matches[].channels[]` -- channels the file was shared in
-- `files.matches[].url_private` -- download URL (requires auth)
+- `files.matches[].id` -- file ID to pass to `slack-cli files download`
+- `files.matches[].url_private` -- private URL; do not fetch it without Slack authentication
+
+To read a matched image or document attachment, use its file ID rather than calling the private URL directly:
+
+```bash
+slack-cli files download <FILE_ID> --output /tmp/slack-attachment
+```
+
+The download command calls `files.info`, supplies bot bearer authentication, and streams the attachment to disk. It requires the bot token to have `files:read`.
 
 ## Example Workflows
 
@@ -180,6 +189,8 @@ slack-cli search messages "has:link in:#general after:2026-04-01" --count 100 --
 ```bash
 slack-cli search files "from:@sara" --sort timestamp --sort-dir desc --count 50 --json
 ```
+
+Capture the desired result's `id`, then run `slack-cli files download <FILE_ID>` before inspecting its contents.
 
 ## Tips
 

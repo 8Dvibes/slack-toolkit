@@ -1,9 +1,11 @@
 """HTTP client for the Slack Web API. Zero external dependencies (urllib only)."""
 
+import http.client
 import json
 import os
 import ssl
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.parse
@@ -286,3 +288,76 @@ class SlackClient:
         except urllib.error.URLError as e:
             print(f"Connection error during upload: {e.reason}", file=sys.stderr)
             sys.exit(1)
+
+    def download_request(
+        self,
+        url: str,
+        output_path: str,
+        token_type: str = "bot",
+        chunk_size: int = 1024 * 1024,
+    ) -> int:
+        """Download a private Slack file to disk with bearer authentication.
+
+        Bytes are streamed in chunks to a temporary file beside the destination,
+        then atomically moved into place after a successful download. This keeps
+        memory usage bounded and avoids leaving a partial destination file.
+
+        Returns the number of bytes written.
+        """
+        if chunk_size <= 0:
+            raise ValueError("chunk_size must be greater than zero")
+
+        token = self._get_token(token_type)
+        headers = {"Authorization": f"Bearer {token}"}
+        req = urllib.request.Request(url, headers=headers, method="GET")
+        temp_path = None
+
+        try:
+            with urllib.request.urlopen(req, context=self._ctx, timeout=60) as resp:
+                status = getattr(resp, "status", None)
+                if status is None and hasattr(resp, "getcode"):
+                    status = resp.getcode()
+                if status is not None and not 200 <= status < 300:
+                    raise SlackApiError(
+                        f"File download failed: HTTP {status}", status=status
+                    )
+
+                output_path = os.fspath(output_path)
+                output_dir = os.path.dirname(os.path.abspath(output_path))
+                output_name = os.path.basename(output_path) or "slack-download"
+                total_bytes = 0
+
+                with tempfile.NamedTemporaryFile(
+                    mode="wb",
+                    dir=output_dir,
+                    prefix=f".{output_name}.",
+                    suffix=".part",
+                    delete=False,
+                ) as output_file:
+                    temp_path = output_file.name
+                    while True:
+                        chunk = resp.read(chunk_size)
+                        if not chunk:
+                            break
+                        output_file.write(chunk)
+                        total_bytes += len(chunk)
+
+                os.replace(temp_path, output_path)
+                temp_path = None
+                return total_bytes
+        except SlackApiError:
+            raise
+        except urllib.error.HTTPError as e:
+            raise SlackApiError(
+                f"File download failed: HTTP {e.code} {e.reason}", status=e.code
+            ) from e
+        except urllib.error.URLError as e:
+            raise SlackApiError(f"File download connection failed: {e.reason}") from e
+        except (OSError, http.client.HTTPException) as e:
+            raise SlackApiError(f"Could not save downloaded file: {e}") from e
+        finally:
+            if temp_path:
+                try:
+                    os.unlink(temp_path)
+                except OSError:
+                    pass

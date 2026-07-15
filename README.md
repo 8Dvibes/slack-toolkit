@@ -331,7 +331,7 @@ slack-cli search all "kubernetes"
 
 ### `files`
 
-Upload, list, and manage files.
+Upload, download, list, and manage files.
 
 ```bash
 # Upload a file
@@ -348,9 +348,17 @@ slack-cli files list --types images
 # Get file info
 slack-cli files info F0FILEID
 
+# Download a private file using its Slack filename in the current directory
+slack-cli files download F0FILEID
+
+# Choose the destination path (`files get` is an alias)
+slack-cli files get F0FILEID --output /tmp/attachment.png
+
 # Delete a file
 slack-cli files delete F0FILEID
 ```
+
+Private downloads call `files.info`, prefer `url_private_download` (falling back to `url_private`), and stream the response with bot bearer authentication. The bot token needs the `files:read` scope.
 
 ---
 
@@ -624,7 +632,7 @@ slack-cli skills doctor
 | `slack-thread` | `/slack-thread` | Read and reply to Slack threads with full conversation context |
 | `slack-schedule` | `/slack-schedule` | Schedule messages for future delivery with human-readable time conversion |
 | `slack-search` | `/slack-search` | Full-text message and file search using Slack search operators |
-| `slack-file-upload` | `/slack-file-upload` | Upload files using the V2 two-step flow with channel sharing |
+| `slack-file-upload` | `/slack-file-upload` | Upload files and download Slack attachments for local inspection |
 | `slack-reactions` | `/slack-reactions` | Add/remove reactions, run emoji polls, audit reaction patterns |
 | `slack-channel-create` | `/slack-channel-create` | Provision a channel end-to-end: name, topic, members, bookmarks |
 | `slack-channel-info` | `/slack-channel-info` | Deep dive on a channel: members, history, pins, bookmarks, purpose |

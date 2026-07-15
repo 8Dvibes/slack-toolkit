@@ -1,14 +1,14 @@
 ---
 name: slack-file-upload
-description: "Upload files to Slack channels and threads. Uses the V2 two-step upload flow, supports all file types, titles, and comments. Use when sharing a file, attaching a report, or uploading build artifacts to Slack."
+description: "Upload files to Slack or download attachments for local inspection. Use when sharing reports and build artifacts, or when an agent needs to read a Slack image, document, or other attached file."
 command_name: slack-cli
-tags: [slack, file, upload, share, attachment]
+tags: [slack, file, upload, download, share, attachment]
 ---
 <!-- installed by slack-cli -->
 
-# /slack-file-upload -- Upload Files to Slack
+# /slack-file-upload -- Upload and Download Slack Files
 
-Upload files to Slack channels and threads using `slack-cli`. Uses the modern V2 two-step upload flow (getUploadURLExternal + completeUploadExternal) which replaced the deprecated files.upload endpoint.
+Upload files to Slack channels and threads, or download Slack attachments for local inspection. Uploads use the modern V2 flow (`files.getUploadURLExternal` + `files.completeUploadExternal`) that replaced the deprecated `files.upload` endpoint. Downloads resolve the private URL through `files.info` and send bot authentication automatically.
 
 ## When to Use
 
@@ -16,6 +16,7 @@ Upload files to Slack channels and threads using `slack-cli`. Uses the modern V2
 - Uploading build artifacts or reports to a thread
 - Attaching a file with a comment for context
 - Listing or inspecting files already shared in Slack
+- Downloading an image, PDF, document, log, or other attachment so an agent can read it locally
 
 ## Procedure
 
@@ -116,6 +117,22 @@ slack-cli files info <FILE_ID> --json
 
 Returns: file ID, name, title, type, size, uploader, creation date, download URL, and which channels it is shared in.
 
+### Download and read an attachment
+
+Download to the file's Slack name in the current directory:
+
+```bash
+slack-cli files download <FILE_ID>
+```
+
+Choose a local destination:
+
+```bash
+slack-cli files download <FILE_ID> --output /tmp/attachment.png
+```
+
+`slack-cli files get <FILE_ID>` is an alias. Use this command instead of copying `url_private` into `curl`: the CLI supplies `Authorization: Bearer` without exposing the token and streams large files to disk. After download, inspect the local image/document with the appropriate agent tool.
+
 ### Delete a file
 
 ```bash
@@ -146,6 +163,13 @@ slack-cli files upload /var/log/app/error.log --channels C0AM2BVMHRT --title "Er
 
 ```bash
 slack-cli files list --channel C0AM2BVMHRT --types images --count 10 --json
+```
+
+### Download an image attachment for inspection
+
+```bash
+slack-cli files download F0FILEID --output /tmp/slack-image.png
+file /tmp/slack-image.png
 ```
 
 ### Upload without sharing, then check it exists
@@ -181,5 +205,5 @@ The file size limit depends on the workspace plan (free: 5 GB total, paid: large
 - The `--channels` flag takes a single channel ID. To share to multiple channels after upload, use the Slack UI or the raw API.
 - For large files, the upload may take a moment. The command blocks until the upload completes.
 - The `--json` flag on `files upload` returns the full file object from the completeUploadExternal response, including the file ID and permalink.
-- Bot tokens need the `files:write` scope for uploads and `files:read` scope for listing/info.
+- Bot tokens need the `files:write` scope for uploads and `files:read` for listing, info, and downloads. A `missing_scope` error during download means the app must be granted `files:read` and reinstalled to the workspace.
 - To upload to a different workspace, use `--profile <name>`.

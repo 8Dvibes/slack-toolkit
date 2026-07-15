@@ -270,6 +270,7 @@ This returns your bot/user ID, workspace name, and the associated scopes.
 | Look up a user | `slack-cli users info USER_ID` |
 | Search for user | `slack-cli users lookup EMAIL` |
 | Upload a file | `slack-cli files upload CHANNEL FILE` |
+| Download an attachment | `slack-cli files download FILE_ID [--output PATH]` |
 | Add a reaction | `slack-cli reactions add CHANNEL TS EMOJI` |
 | Search messages | `slack-cli search messages "query"` |
 | Check config | `slack-cli config show` |

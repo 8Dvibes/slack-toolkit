@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.1] - 2026-07-15
+
+### Added
+
+- `slack-cli files download <file_id> [--output PATH]` with `files get` as an alias. The command looks up `url_private_download` through `files.info`, falls back to `url_private`, and uses the Slack filename in the current directory when `--output` is omitted.
+- Authenticated, chunked private-file downloads in `SlackClient`. Downloads send the bot bearer token without printing it, keep memory use bounded for large files, and atomically replace the destination only after a successful response.
+- Offline download tests covering bearer authentication, chunked streaming, non-200 responses, private URL fallback, default filenames, common Slack errors, and the `files get` alias.
+
+### Changed
+
+- Bundled Slack skills now direct agents to `files download` when they need to read image or document attachments and call out the required `files:read` scope.
+
 ## [0.3.0] - 2026-07-11
 
 ### Fixed

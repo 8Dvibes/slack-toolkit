@@ -502,6 +502,12 @@ def cmd_files_info(args):
     get_file_info(client, file_id=args.file_id, as_json=args.json)
 
 
+def cmd_files_download(args):
+    from .files import download_file
+    client = _build_client(args)
+    download_file(client, file_id=args.file_id, output=args.output)
+
+
 def cmd_files_delete(args):
     from .files import delete_file
     client = _build_client(args)
@@ -1229,6 +1235,17 @@ def build_parser() -> argparse.ArgumentParser:
     fi = files_sub.add_parser("info", help="Get file info")
     fi.add_argument("file_id", help="File ID")
     fi.set_defaults(func=cmd_files_info)
+
+    fdl = files_sub.add_parser(
+        "download",
+        aliases=["get"],
+        help="Download a private file (alias: get)",
+    )
+    fdl.add_argument("file_id", help="File ID")
+    fdl.add_argument(
+        "--output", "-o", help="Destination path (default: Slack filename in cwd)"
+    )
+    fdl.set_defaults(func=cmd_files_download)
 
     fd = files_sub.add_parser("delete", help="Delete a file")
     fd.add_argument("file_id", help="File ID")
