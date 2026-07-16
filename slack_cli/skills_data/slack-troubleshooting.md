@@ -44,7 +44,7 @@ Check that `bot_token` and/or `user_token` are set.
 **Fix:**
 ```bash
 # Set bot token
-slack-cli config set bot-token xoxb-YOUR-TOKEN
+slack-cli config set-profile default --bot-token xoxb-YOUR-TOKEN
 
 # Verify it works
 slack-cli api auth.test --json
@@ -68,7 +68,7 @@ slack-cli api auth.test --json
 1. Go to your Slack App dashboard: https://api.slack.com/apps
 2. Open your app > OAuth & Permissions
 3. Reinstall the app to the workspace (generates a fresh token)
-4. Update the token: `slack-cli config set bot-token xoxb-NEW-TOKEN`
+4. Update the token: `slack-cli config set-profile default --bot-token xoxb-NEW-TOKEN`
 
 ---
 
@@ -133,7 +133,7 @@ slack-cli api auth.test --json
 1. Go to Slack App dashboard > OAuth & Permissions
 2. Under "Bot Token Scopes" or "User Token Scopes", add the missing scope
 3. Reinstall the app (required after scope changes)
-4. Update your token: `slack-cli config set bot-token xoxb-NEW-TOKEN`
+4. Update your token: `slack-cli config set-profile default --bot-token xoxb-NEW-TOKEN`
 
 **Common scope-method pairs:**
 

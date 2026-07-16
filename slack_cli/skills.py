@@ -61,11 +61,32 @@ def _parse_skill_frontmatter(path: Path) -> dict:
 
 
 def _extract_cli_commands(path: Path) -> list:
-    """Extract slack-cli commands referenced in a SKILL.md file."""
+    """Extract actual slack-cli invocations from Markdown command examples.
+
+    Only shell-style command lines and inline-code spans count. Prose such as
+    "slack-cli best practices" must not be interpreted as a command, and a
+    match must never cross a newline into YAML frontmatter or body text.
+    """
     text = path.read_text()
-    # Match lines that look like CLI invocations
-    pattern = r"slack-cli\s+([a-z][a-z0-9\-\s]+)"
-    matches = re.findall(pattern, text)
+    matches = []
+
+    # Commands in fenced blocks or standalone shell examples.
+    for line in text.splitlines():
+        match = re.match(
+            r"^[ \t]*(?:\$[ \t]+)?slack-cli[ \t]+([^\r\n]+)$", line
+        )
+        if match:
+            matches.append(match.group(1))
+
+    # Commands quoted inline, including bullets such as:
+    # - Run `slack-cli api auth.test` before continuing.
+    matches.extend(
+        re.findall(
+            r"`(?:\$[ \t]+)?slack-cli[ \t]+([^`\r\n]+)`",
+            text,
+        )
+    )
+
     # Deduplicate and clean
     commands = []
     seen = set()
@@ -74,7 +95,7 @@ def _extract_cli_commands(path: Path) -> list:
         cmd = re.sub(r"\s+", " ", cmd).strip()
         # Only keep the subcommand chain (e.g. "chat post", "methods search")
         parts = cmd.split()
-        if len(parts) >= 1 and parts[0] not in seen:
+        if len(parts) >= 1:
             key = " ".join(parts[:2]) if len(parts) >= 2 else parts[0]
             if key not in seen:
                 commands.append(key)
