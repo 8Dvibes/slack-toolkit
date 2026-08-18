@@ -261,7 +261,7 @@ The alternative -- hosting skills separately or requiring a manual download -- a
 
 ### Profile isolation
 
-Each Slack workspace is a named profile in `~/.slack-cli.json` (mode 600). The active profile is resolved via: explicit `--profile` flag, then `SLACK_PROFILE` env var, then the `default_profile` field in config. Env vars (`SLACK_BOT_TOKEN`, `SLACK_USER_TOKEN`) override config entirely.
+Each Slack workspace is a named profile in `~/.slack-cli.json` (mode 600). The active profile is resolved via: explicit `--profile` flag, then `SLACK_PROFILE` env var, then the `default_profile` field in config. When a profile is named explicitly, its tokens are used verbatim and `SLACK_BOT_TOKEN` / `SLACK_USER_TOKEN` are ignored -- asking for a workspace by name must never be answered by another workspace's ambient token (see 0.4.0). Those env vars supply the tokens only when no profile is named, which is the CI case.
 
 This makes it straightforward to manage multiple workspaces (production, staging, client workspaces) and to use the tool in CI without touching the config file.
 

@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.0] - 2026-08-18
+
+### Changed
+
+- **BREAKING (precedence): an explicitly named profile now wins over `SLACK_BOT_TOKEN` / `SLACK_USER_TOKEN`.** Previously `get_profile()` resolved the token as `os.environ["SLACK_BOT_TOKEN"] or profile.bot_token`, so the environment beat `--profile`. If a workspace-bound bot token was exported shell-wide, `slack-cli --profile <other-workspace>` silently answered from the *ambient* workspace instead -- with `auth.test` reporting the ambient team while `--profile` reported the one you asked for. `SLACK_PROFILE=<name>` had the same defect: it selected the profile *name* but the env var still supplied the *token*.
+  Real-world miss (2026-08-18): a two-workspace fleet exported the AI Build Lab bot token from `~/.zshenv`; every `--profile ranch` call was answered by AI Build Lab, and an unlabeled call succeeded when it should have failed. Naming a workspace must never be answered by another workspace's ambient token.
+  New precedence: (1) explicit `--profile` / `SLACK_PROFILE` -- tokens come from that profile verbatim, env vars ignored; (2) otherwise `SLACK_BOT_TOKEN` / `SLACK_USER_TOKEN`; (3) otherwise the config file's `default_profile`.
+  **Who is affected:** only callers that set `--profile`/`SLACK_PROFILE` *and* `SLACK_BOT_TOKEN` together -- which is exactly the ambiguous combination this fixes. CI and container setups that pass tokens purely through the environment and never name a profile are unchanged.
+
+### Added
+
+- Unknown profile names now fail loudly. `--profile typo` exits 1 with `Error: no such profile: typo` and lists the known profiles, instead of silently falling through to an empty profile (and, before this release, to whatever the ambient env token pointed at).
+- The "no bot token" error now distinguishes the two cases: a named profile that carries no `bot_token` names that profile in the message, while an unnamed call is told to name a workspace with `--profile <name>`.
+
 ## [0.3.1] - 2026-07-15
 
 ### Added

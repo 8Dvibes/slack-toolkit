@@ -129,6 +129,8 @@ SLACK_PROFILE=staging slack-cli conversations list
 
 Config lives at `~/.slack-cli.json` (mode 600).
 
+**Token precedence (v0.4.0+):** naming a profile wins. With `--profile` or `SLACK_PROFILE` set, the tokens come from that profile and `SLACK_BOT_TOKEN` / `SLACK_USER_TOKEN` are ignored, so an ambient token from one workspace can never answer a request for another. With no profile named, those env vars are used, then `default_profile`. An unknown profile name is an error, not a silent fallback.
+
 ---
 
 ## Command Reference
