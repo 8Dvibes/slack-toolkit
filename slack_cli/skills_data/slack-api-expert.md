@@ -287,10 +287,10 @@ This returns your bot/user ID, workspace name, and the associated scopes.
 slack-cli config show
 
 # Set bot token
-slack-cli config set bot-token xoxb-YOUR-TOKEN-HERE
+slack-cli config set-profile default --bot-token xoxb-YOUR-TOKEN-HERE
 
 # Set user token (needed for user-scoped methods)
-slack-cli config set user-token xoxp-YOUR-TOKEN-HERE
+slack-cli config set-profile default --user-token xoxp-YOUR-TOKEN-HERE
 
 # Verify authentication
 slack-cli api auth.test --json
