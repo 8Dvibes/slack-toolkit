@@ -4,6 +4,7 @@ import http.client
 import json
 import os
 import ssl
+import subprocess
 import sys
 import tempfile
 import time
@@ -31,9 +32,10 @@ class SlackClient:
 
     BASE_URL = "https://slack.com/api/"
 
-    def __init__(self, bot_token: str, user_token: Optional[str] = None):
+    def __init__(self, bot_token: str, user_token: Optional[str] = None, pre_post_guard: Optional[list] = None):
         self.bot_token = bot_token
         self.user_token = user_token
+        self.pre_post_guard = pre_post_guard
         self._ctx = ssl.create_default_context()
 
     def _get_token(self, token_type: str = "bot") -> str:
@@ -152,6 +154,18 @@ class SlackClient:
         Returns the full response dict on success.
         Raises SlackApiError if ok is false.
         """
+        if self.pre_post_guard is not None and method_name in {"chat.postMessage", "chat.scheduleMessage", "chat.update"}:
+            if not isinstance(self.pre_post_guard, list) or not self.pre_post_guard \
+                    or not all(isinstance(part, str) and part for part in self.pre_post_guard):
+                raise SlackApiError("pre_post_guard_invalid")
+            try:
+                result = subprocess.run(self.pre_post_guard, input=json.dumps({"method": method_name, "params": params or {}}),
+                                        capture_output=True, text=True, timeout=90)
+                verdict = json.loads(result.stdout)
+                if result.returncode != 0 or not isinstance(verdict, dict) or verdict.get("verdict") != "PASS":
+                    raise SlackApiError("pre_post_guard_hold")
+            except (OSError, subprocess.TimeoutExpired, ValueError):
+                raise SlackApiError("pre_post_guard_unavailable") from None
         resp = self._request(
             method_name,
             params=params,

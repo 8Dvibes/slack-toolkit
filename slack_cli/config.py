@@ -90,6 +90,7 @@ def get_profile(profile_name: Optional[str] = None) -> dict:
         "profile_name": name,
         "workspace_name": profile.get("name", ""),
         "explicit_profile": bool(explicit),
+        "pre_post_guard": profile.get("pre_post_guard"),
     }
 
 

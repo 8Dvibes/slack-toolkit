@@ -19,6 +19,7 @@ def _build_client(args) -> SlackClient:
     return SlackClient(
         bot_token=profile["bot_token"],
         user_token=profile.get("user_token", ""),
+        pre_post_guard=profile.get("pre_post_guard"),
     )
 
 
@@ -66,6 +67,15 @@ def cmd_config_set_profile(args):
         profile["name"] = args.workspace_name
     if args.default_channel:
         profile["default_channel"] = args.default_channel
+    if getattr(args, "pre_post_guard", None) is not None:
+        try:
+            guard = json.loads(args.pre_post_guard)
+            if not isinstance(guard, list) or not guard or not all(isinstance(part, str) and part for part in guard):
+                raise ValueError()
+        except (ValueError, TypeError):
+            print("Error: pre-post guard must be a nonempty JSON command array.", file=sys.stderr)
+            raise SystemExit(2)
+        profile["pre_post_guard"] = guard
 
     profiles[args.name] = profile
     config["profiles"] = profiles
@@ -989,6 +999,7 @@ def build_parser() -> argparse.ArgumentParser:
     csp.add_argument("--bot-token", help="Bot token (xoxb-...)")
     csp.add_argument("--user-token", help="User token (xoxp-...)")
     csp.add_argument("--workspace-name", help="Workspace display name")
+    csp.add_argument("--pre-post-guard", help="JSON command array; must return JSON verdict PASS before message writes")
     csp.add_argument("--default-channel", help="Default channel ID")
     csp.set_defaults(func=cmd_config_set_profile)
 
