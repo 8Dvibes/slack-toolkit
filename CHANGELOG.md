@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- `slack-workspace-invite-ui`: a documentation-only browser skill for one explicitly approved workspace invitation, with protected recipient input, duplicate checks, one send, separate Pending readback, and explicit stop/result states.
+- A source-verified note explaining the Enterprise-only invitation API and the admin UI alternative. Bundled skills now total 34.
+
 ## [0.4.0] - 2026-08-18
 
 ### Changed

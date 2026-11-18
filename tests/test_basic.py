@@ -243,10 +243,10 @@ def test_config_show_no_crash():
 # ---- skills ----
 
 def test_skills_count():
-    """Exactly 33 skill files exist in skills_data."""
+    """Exactly 34 skill files exist in skills_data."""
     skills_dir = Path(__file__).parent.parent / "slack_cli" / "skills_data"
     skill_files = list(skills_dir.glob("*.md"))
-    assert len(skill_files) == 33, f"Expected 33 skills, found {len(skill_files)}: {[f.name for f in skill_files]}"
+    assert len(skill_files) == 34, f"Expected 34 skills, found {len(skill_files)}: {[f.name for f in skill_files]}"
 
 
 def test_skills_have_frontmatter():

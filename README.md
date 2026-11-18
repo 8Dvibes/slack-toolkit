@@ -1,6 +1,6 @@
 # slack-toolkit
 
-Zero-dependency CLI for the Slack Web API. 306 API methods in the catalog, 33 Claude Code skills bundled, no external packages required.
+Zero-dependency CLI for the Slack Web API. 306 API methods in the catalog, 34 Claude Code skills bundled, no external packages required.
 
 Built for AI agents, automation scripts, and developers who need a scriptable Slack client without managing OAuth flows in a browser or wiring up MCP servers.
 
@@ -87,7 +87,7 @@ slack-cli docs chat.postMessage --fresh  # bypass cache
 
 Docs are cached in `~/.slack-cli/docs/` with a 30-day TTL.
 
-### 33 Claude Code Skills
+### 34 Claude Code Skills
 
 Skills are structured prompt files that teach Claude Code how to use slack-cli for common tasks. Install them all in one command:
 
@@ -655,6 +655,7 @@ slack-cli skills doctor
 | `slack-docs` | `/slack-docs` | Real-time API doc lookup, catalog refresh from docs.slack.dev |
 | `slack-lists` | `/slack-lists` | Slack Lists CRUD via API passthrough |
 | `slack-dnd` | `/slack-dnd` | Check and set Do Not Disturb: snooze, end snooze, team DND status |
+| `slack-workspace-invite-ui` | `/slack-workspace-invite-ui` | One approved workspace invite through a signed-in admin browser; protected input and separate Pending readback ([why the UI](docs/workspace-invite-ui.md)) |
 | `slack-admin` | `/slack-admin` | Admin operations via API passthrough: users, channels, apps, workspace settings |
 | `slack-calls` | `/slack-calls` | Register and manage voice/video calls in Slack's call UI |
 | `slack-bookmarks` | `/slack-bookmarks` | Add, edit, list, and remove channel bookmarks |
@@ -757,7 +758,7 @@ for ch in json.load(sys.stdin).get('channels', []):
         print(f'{ch[\"id\"]} {ch[\"name\"]}')"
 ```
 
-The best skills follow the same pattern as the bundled ones: a clear procedure section with real command examples, a tips section with gotchas, and frontmatter tags that help Claude match the skill to user intent. Look at any of the 33 bundled skills in `slack_cli/skills_data/` for reference.
+The best skills follow the same pattern as the bundled ones: a clear procedure section with real command examples, a tips section with gotchas, and frontmatter tags that help Claude match the skill to user intent. Look at any of the 34 bundled skills in `slack_cli/skills_data/` for reference.
 
 ---
 
@@ -785,7 +786,7 @@ slack_cli/
   reminders.py     -- Reminder management
   dnd.py           -- Do Not Disturb
   catalog_data/    -- Bundled methods.json (306 methods)
-  skills_data/     -- 33 bundled SKILL.md files
+  skills_data/     -- 34 bundled SKILL.md files
 ```
 
 **Key design decisions:**
